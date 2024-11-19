@@ -1,4 +1,51 @@
-site_name: Elm Guide
-theme:
-  name: mkdocs
-  locale: fa
+site_name: کتابچه Elm
+nav:
+  - مقدمه‌ای بر Elm: index.md
+  - مفاهیم پایه: core_language.md
+  - معماری Elm:
+    - architecture/index.md
+    - architecture/buttons.md
+    - architecture/text_fields.md
+    - architecture/forms.md
+  - نوع داده:
+    - types/index.md
+    - types/reading_types.md
+    - types/type_aliases.md
+    - types/custom_types.md
+    - types/pattern_matching.md
+  - مدیریت خطا:
+    - error_handling/index.md
+    - error_handling/maybe.md
+    - error_handling/result.md
+  - دستور و اشتراک:
+    - effects/index.md
+    - effects/http.md
+    - effects/json.md
+    - effects/random.md
+    - effects/time.md
+  - نصب:
+    - install/index.md
+    - install/editor.md
+    - install/elm.md
+  - تعامل با جاوااسکریپت:
+    - interop/index.md
+    - interop/flags.md
+    - interop/ports.md
+    - interop/custom_elements.md
+    - interop/limits.md
+  - وب اپلیکیشن:
+    - web_apps/index.md
+    - web_apps/navigation.md
+    - web_apps/url_parsing.md
+    - web_apps/modules.md
+    - web_apps/structure.md
+  - بهینه‌سازی:
+    - optimization/index.md
+    - optimization/lazy.md
+    - optimization/keyed.md
+    - optimization/asset_size.md
+  - مراحل بعدی: next_steps.md
+  - ضمیمه:
+    - appendix/types_as_sets.md
+    - appendix/types_as_bits.md
+    - appendix/function_types.md

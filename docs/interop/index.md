@@ -4,9 +4,9 @@
 
 اما وقتی نیاز به کار با جاوا اسکریپت دارید، چه اتفاقی می‌افتد؟ شاید یک Browser API وجود داشته باشد که هنوز بسته‌ نرم‌افزاری معادل در Elm ندارد. شاید بخواهید یک ویجت جاوا اسکریپت را درون برنامه خود جاسازی کنید. این فصل سه مکانیزم تعامل با جاوا اسکریپت را معرفی می‌کند:
 
-- [Flags](/interop/flags.html)
-- [Ports](/interop/ports.html)
-- [Custom Elements](/interop/custom_elements.html)
+- [Flags](flags.md)
+- [Ports](ports.md)
+- [Custom Elements](custom_elements.md)
 
 قبل از اینکه به این سه مکانیزم بپردازیم، باید بدانیم چگونه برنامه Elm را به جاوا اسکریپت کامپایل کنیم!
 

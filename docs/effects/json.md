@@ -181,11 +181,11 @@ quoteDecoder =
 
 باید آن را از طریق یک `Decoder` اجرا تا به اطلاعات خاصی دسترسی پیدا کنیم. بنابراین اگر بخواهیم `"age"` را دریافت کنیم، باید JSON را از طریق یک `Decoder Int` که دقیقا نحوه دسترسی به آن اطلاعات را توصیف می‌کند، اجرا کنیم:
 
-![Integer Decoder](int.svg)
+![Integer Decoder](../assets/diagrams/int.svg)
 
 اگر همه چیز خوب پیش برود، یک `Int` در طرف دیگر خواهیم داشت! و اگر بخواهیم `"name"` را دریافت کنیم، باید JSON را از طریق یک `Decoder String` که دقیقا نحوه دسترسی به آن را توصیف می‌کند، اجرا کنیم:
 
-![String Decoder](string.svg)
+![String Decoder](../assets/diagrams/string.svg)
 
 اگر همه چیز خوب پیش برود، یک `String` در طرف دیگر خواهیم داشت!
 

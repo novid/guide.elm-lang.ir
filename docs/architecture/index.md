@@ -10,7 +10,7 @@
 
 برنامه‌های Elm همیشه به این شکل به نظر می‌رسند:
 
-![نمودار معماری Elm](buttons.svg)
+![نمودار معماری Elm](../assets/diagrams/buttons.svg)
 
 برنامه HTML تولید می‌کند تا بر روی صفحه نمایش داده شود، سپس کامپیوتر پیام‌هایی از آنچه در حال وقوع است ارسال می‌کند. "آن‌ها یک دکمه را کلیک کردند!"
 
@@ -28,12 +28,12 @@
 
 تمام مثال‌ها در ویرایشگر آنلاین موجود هستند:
 
-[![ویرایشگر آنلاین](try.png)](https://elm-lang.org/try)
+[![ویرایشگر آنلاین](../assets/images/try.webp)](https://elm-lang.org/try)
 
 این ویرایشگر، نکات را در گوشه بالا سمت چپ نشان می‌دهد:
 
 <video id="hints-video" width="360" height="180" autoplay loop style="margin: 0.55em 0 1em 2em;" onclick="var v = document.getElementById('hints-video'); v.paused ? (v.play(), v.style.opacity = 1) : (v.pause(), v.style.opacity = 0.5)">
-  <source src="hints.mp4" type="video/mp4">
+  <source src="../assets/hints.mp4" type="video/mp4">
 </video>
 
 اگر با چیزی گیج‌کننده مواجه شدید، حتما به این نکات دقت کنید!

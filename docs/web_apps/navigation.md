@@ -1,6 +1,6 @@
 # پیمایش
 
-به تازگی دیدیم که چگونه یک صفحه را میزبانی کنیم، اما فرض کنید که در حال ساخت یک وبسایت مانند `package.elm-lang.org` هستیم. این وبسایت دارای چندین صفحه است (برای نمونه [جستجو](https://package.elm-lang.org/)، [راهنما](https://package.elm-lang.org/packages/elm/core/latest/)، [مستندات](https://package.elm-lang.org/packages/elm/core/latest/Maybe)) که همه به طور متفاوتی کار می‌کنند. چگونه این کار انجام می‌شود؟
+به تازگی دیدیم که چگونه یک صفحه را میزبانی کنیم، اما فرض کنید که در حال ساخت وبسایتی مانند `package.elm-lang.org` هستیم. این وبسایت دارای چندین صفحه است (برای نمونه [جستجو][elm-packages]، [راهنما][package-readme] و [مستندات][package-docs]) که همه به طور متفاوتی کار می‌کنند. چگونه این کار انجام می‌شود؟
 
 ## ساختار چند صفحه‌ای
 
@@ -9,14 +9,14 @@
 تا نسخه Elm 0.19، دقیقا همین کار انجام می‌شد! این کار ساده است، اما چند نقطه ضعف دارد:
 
 1. **صفحه خالی:** با هر بار بارگیری HTML جدید، صفحه سفید می‌شود. آیا می‌توان بجای آن یک انتقال زیبا انجام داد؟
-2. **درخواست اضافی:** هر بسته نرم‌افزاری یک فایل `docs.json` دارد، اما هر بار که به یک ماژول مانند [`String`](https://package.elm-lang.org/packages/elm/core/latest/String) یا [`Maybe`](https://package.elm-lang.org/packages/elm/core/latest/Maybe) مراجعه می‌کنید، بارگیری می‌شود. آیا می‌توان داده‌ها را بین صفحات به اشتراک گذاشت؟
+2. **درخواست اضافی:** هر بسته یک فایل `docs.json` دارد، اما هر بار که به یک ماژول مانند [`String`][string] یا [`Maybe`][maybe] مراجعه می‌کنید، بارگیری می‌شود. آیا می‌توان داده‌ها را بین صفحات به اشتراک گذاشت؟
 3. **کد اضافی:** صفحه اصلی و مستندات، توابع مشترکی مانند `Html.text` و `Html.div` دارند. آیا می‌توان این کد را بین صفحات به اشتراک گذاشت؟
 
 می‌توانیم هر سه مورد را بهبود ببخشیم! ایده اصلی این است که HTML را فقط یک مرتبه بارگیری، سپس کمی با URL تغییرات را مدیریت کنیم.
 
 ## ساختار تک صفحه‌ای
 
-بجای ایجاد برنامه با `Browser.element` یا `Browser.document`، می‌توانیم یک [`Browser.application`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#application) ایجاد کرده تا از بارگیری HTML جدید هنگام تغییر URL جلوگیری کنیم:
+بجای ایجاد برنامه با `Browser.element` یا `Browser.document`، می‌توانیم یک [`Browser.application`][browser.application] ایجاد کرده تا از بارگیری HTML جدید هنگام تغییر URL جلوگیری کنیم:
 
 ```elm
 application :
@@ -32,19 +32,13 @@ application :
 
 این کار منجر به گسترش عملکرد `Browser.document` در سه سناریوی مهم می‌شود:
 
-**زمانی که برنامه شروع می‌شود**، تابع `init` مقدار URL فعلی را از نوار پیمایش مرورگر دریافت می‌کند. این کار به شما اجازه می‌دهد با توجه به مقدار `Url` چیزهای مختلفی را نمایش دهید.
+**زمانی که برنامه شروع می‌شود**، تابع `init` مقدار URL فعلی را از نوار پیمایش مرورگر وب دریافت می‌کند. این کار به شما اجازه می‌دهد با توجه به مقدار `Url` چیزهای مختلفی را نمایش دهید.
 
-**زمانی که روی یک لینک کلیک می‌شود**، مانند `<a href="/home">Home</a>`، یک درخواست [`UrlRequest`][ur] صادر می‌شود. بنابراین، بجای بارگیری HTML جدید با تمام معایب آن، `onUrlRequest` یک پیام برای تابع `update` ایجاد می‌کند که می‌توان دقیقا تصمیم گرفت چه کاری باید انجام شود. برای نمونه، می‌توان موقعیت اسکرول را ذخیره‌سازی کرد، داده‌ها را در مرورگر حفظ کرد یا URL را تغییر داد.
+**زمانی که روی یک لینک کلیک می‌شود**، مانند `<a href="/home">Home</a>`، یک درخواست [`UrlRequest`][ur] صادر می‌شود. بنابراین، بجای بارگیری HTML جدید با تمام معایب آن، `onUrlRequest` یک پیام برای تابع `update` ایجاد می‌کند که می‌توان دقیقا تصمیم گرفت چه کاری باید انجام شود. برای نمونه، می‌توان موقعیت اسکرول را ذخیره‌سازی کرد، داده‌ها را در مرورگر وب حفظ کرد یا URL را تغییر داد.
 
 **زمانی که URL تغییر می‌کند**، `Url` جدید به `onUrlChange` ارسال می‌شود. پیام حاصل به تابع `update` می‌رود که در آن می‌توان تصمیم گرفت چگونه صفحه جدید را نمایش دهیم.
 
 بنابراین، بجای بارگیری HTML جدید، این سه قابلیت جدید به شما کنترل کامل بر تغییرات URL را می‌دهند. بیایید آن را در عمل ببینیم!
-
-[u]: https://package.elm-lang.org/packages/elm/url/latest/Url#Url
-[ur]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#UrlRequest
-[bn]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation
-[bnp]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#pushUrl
-[bnl]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#load
 
 ## نمونه کد
 
@@ -172,16 +166,16 @@ update msg model =
       )
 ```
 
-دو تابع `Nav.pushUrl` و `Nav.load` عملکرد جالبی دارند. این‌ها هر دو از ماژول [`Browser.Navigation`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation) هستند که درباره تغییر URL به روش‌های مختلف است. ما از دو تابع رایج آن ماژول استفاده می‌کنیم:
+دو تابع `Nav.pushUrl` و `Nav.load` عملکرد جالبی دارند. این‌ها هر دو از ماژول [`Browser.Navigation`][browser.navigation] هستند که درباره تغییر URL به روش‌های مختلف است. ما از دو تابع رایج آن ماژول استفاده می‌کنیم:
 
-- تابع [`pushUrl`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#pushUrl) مقدار URL را تغییر می‌دهد، اما HTML جدید بارگیری نمی‌شود. در عوض، یک پیام `UrlChanged` را ایجاد می‌کند که خودمان آن را مدیریت می‌کنیم! همچنین یک ورودی به "تاریخچه مرورگر" اضافه می‌کند تا وقتی که کاربران دکمه‌های `BACK` یا `FORWARD` را فشار می‌دهند، همه چیز به طور عادی کار کند.
-- تابع [`load`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#load) تمام HTML جدید را بارگیری می‌کند. این کار معادل تایپ کردن URL در نوار پیمایش و فشردن Enter است. بنابراین، هر چیزی که در `Model` حاضر وجود دارد، دور ریخته و یک صفحه کاملا جدید بارگیری می‌شود.
+- تابع [`pushUrl`][pushUrl] مقدار URL را تغییر می‌دهد، اما HTML جدید بارگیری نمی‌شود. در عوض، یک پیام `UrlChanged` را ایجاد می‌کند که خودمان آن را مدیریت می‌کنیم! همچنین یک ورودی به "تاریخچه مرورگر" اضافه می‌کند تا وقتی که کاربران دکمه‌های `BACK` یا `FORWARD` را فشار می‌دهند، همه چیز به طور عادی کار کند.
+- تابع [`load`][load] تمام HTML جدید را بارگیری می‌کند. این کار معادل تایپ کردن URL در نوار پیمایش و فشردن Enter است. بنابراین، هر چیزی که در `Model` حاضر وجود دارد، دور ریخته و یک صفحه کاملا جدید بارگیری می‌شود.
 
-بنابراین با نگاهی به تابع `update`، اکنون می‌توانیم درک بهتری از چگونگی ارتباط اجزا با یکدیگر داشته باشیم. وقتی کاربر روی لینک `/home` کلیک می‌کند، یک پیام `Internal` دریافت و از `pushUrl` برای تغییر URL _بدون_ بارگیری HTML جدید استفاده می‌کنیم. وقتی کاربر روی لینک `https://elm-lang.org` کلیک می‌کند، یک پیام `External` دریافت و از `load` برای بارگیری HTML جدید در سرور استفاده می‌کنیم.
+با نگاهی به تابع `update`، اکنون می‌توانیم درک بهتری از چگونگی ارتباط اجزا با یکدیگر داشته باشیم. وقتی کاربر روی لینک `/home` کلیک می‌کند، یک پیام `Internal` دریافت و از تابع `pushUrl` برای تغییر URL _بدون_ بارگیری HTML جدید استفاده می‌کنیم. وقتی کاربر روی لینک `https://elm-lang.org` کلیک می‌کند، یک پیام `External` دریافت و از تابع `load` برای بارگیری HTML جدید در سرور استفاده می‌کنیم.
 
-> **نکته ۱:** هر دو لینک `Internal` و `External` بلافاصله دستورات خود را تولید می‌کنند، اما این کار الزامی نیست! وقتی روی یک لینک `Internal` کلیک می‌شود، شاید بخواهید از [`getViewport`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Dom#getViewport) برای ذخیره‌سازی موقعیت اسکرول استفاده کنید تا در صورت فشردن دکمه `BACK`، آن را حفظ کنید. وقتی روی یک لینک `External` کلیک می‌شود، شاید بخواهید محتوای جعبه متن را قبل از رفتن به صفحه دیگر در پایگاه داده ذخیره‌سازی کنید. همه این‌ها ممکن است! این یک تابع `update` عادی است که می‌توانید وضعیت پیمایش را به تاخیر بیندازید و هر کاری که می‌خواهید انجام دهید.
+> **نکته ۱:** هر دو لینک `Internal` و `External` بلافاصله دستورات خود را تولید می‌کنند، اما این کار الزامی نیست! وقتی روی یک لینک `Internal` کلیک می‌شود، شاید بخواهید از [`getViewport`][getViewport] برای ذخیره‌سازی موقعیت اسکرول استفاده کنید تا در صورت فشردن دکمه `BACK`، آن را حفظ کنید. وقتی روی یک لینک `External` کلیک می‌شود، شاید بخواهید محتوای جعبه متن را قبل از رفتن به صفحه دیگر در پایگاه داده ذخیره‌سازی کنید. همه این‌ها ممکن است! این یک تابع `update` عادی است که می‌توانید وضعیت پیمایش را به تاخیر بیندازید و هر کاری که می‌خواهید انجام دهید.
 >
-> **نکته ۲:** اگر می‌خواهید "آنچه را که کاربران در حال مشاهده بودند" هنگام بازگشت به عقب بازیابی کنید، موقعیت اسکرول ایده‌آل نیست. اگر آن‌ها مرورگر خود را تغییر اندازه دهند یا دستگاه خود را بچرخانند، ممکن است این مقدار به اشتباه محاسبه شود! بنابراین، بهتر است "آنچه را که آن‌ها در حال مشاهده بودند" ذخیره‌سازی کنید. شاید این به معنای استفاده از تابع [`getViewportOf`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Dom#getViewportOf) باشد تا دقیقا بفهمید در حال حاضر چه چیزی روی صفحه نمایش قرار دارد. جزییات بستگی به این دارد که برنامه شما دقیقا چگونه کار می‌کند، بنابراین نمی‌توانم مشاوره دقیقی در این مورد بدهم!
+> **نکته ۲:** اگر می‌خواهید "آنچه را که کاربران در حال مشاهده بودند" هنگام بازگشت به عقب بازیابی کنید، موقعیت اسکرول ایده‌آل نیست. اگر آن‌ها مرورگر خود را تغییر اندازه دهند یا دستگاه خود را بچرخانند، ممکن است این مقدار به اشتباه محاسبه شود! بنابراین، بهتر است "آنچه را که آن‌ها در حال مشاهده بودند" ذخیره‌سازی کنید. شاید این به معنای استفاده از تابع [`getViewportOf`][getViewportOf] باشد تا دقیقا بفهمید در حال حاضر چه چیزی روی صفحه نمایش قرار دارد. جزییات بستگی به این دارد که برنامه شما دقیقا چگونه کار می‌کند، بنابراین نمی‌توانم پیشنهاد دقیقی در این مورد بدهم!
 
 ## `UrlChanged`
 
@@ -191,11 +185,27 @@ update msg model =
 
 در نمونه کد این صفحه فقط URL جدید را ذخیره‌سازی می‌کنیم، اما در یک وب اپلیکیشن واقعی، شما باید URL را تجزیه و تحلیل کنید تا بفهمید چه محتوایی را نمایش دهید. در ادامه فصل، به این موضوع می‌پردازیم!
 
-...
-> **نکته:** در مورد [`Nav.Key`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key) صحبت نکردم تا بر روی مفاهیم مهم‌تر تمرکز کنم. اما برای کسانی که علاقه‌مند هستند، اینجا توضیح می‌دهم!
+> **نکته:** در مورد [`Nav.Key`][nav.key] صحبت نکردم تا بر روی مفاهیم مهم‌تر تمرکز کنم. اما برای کسانی که علاقه‌مند هستند، اینجا توضیح می‌دهم!
 >
 > یک `Key` یا کلید پیمایش برای ایجاد دستوراتی مانند `pushUrl`، که URL را تغییر می‌دهند، لازم است. فقط زمانی به یک `Key` دسترسی دارید که برنامه را با `Browser.application` ایجاد کنید. این کار تضمین می‌کند برنامه شما برای شناسایی تغییرات URL مجهز است. اگر مقادیر `Key` در انواع دیگر برنامه در دسترس بودند، برنامه‌نویسان بی‌خبر قطعا با برخی [باگ‌های آزاردهنده][bugs] مواجه می‌شدند و بسیاری از تکنیک‌ها را به سختی یاد می‌گرفتند!
 >
 > به همین دلیل، یک خط در تعریف `Model` برای `Key` داریم. این یک هزینه نسبتا کم برای کمک به جلوگیری از یک دسته مشکلات بسیار ظریف است!
 
+[elm-packages]: https://package.elm-lang.org
+[package-readme]: https://package.elm-lang.org/packages/elm/core/latest
+[package-docs]: https://package.elm-lang.org/packages/elm/core/latest/Maybe
+[string]: https://package.elm-lang.org/packages/elm/core/latest/String
+[maybe]: https://package.elm-lang.org/packages/elm/core/latest/Maybe
+[browser.application]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#application
+[u]: https://package.elm-lang.org/packages/elm/url/latest/Url#Url
+[ur]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#UrlRequest
+[bn]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation
+[bnp]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#pushUrl
+[bnl]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#load
+[browser.navigation]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation
+[pushUrl]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#pushUrl
+[load]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#load
+[getViewport]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Dom#getViewport
+[getViewportOf]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Dom#getViewportOf
+[nav.key]: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key
 [bugs]: https://github.com/elm/browser/blob/1.0.0/notes/navigation-in-elements.md

@@ -1,4 +1,4 @@
-site_name: کتابچه Elm
+site_name: راهنمای Elm
 nav:
   - مقدمه‌ای بر Elm: index.md
   - مفاهیم پایه: core_language.md

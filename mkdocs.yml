@@ -1,51 +1,53 @@
 site_name: راهنمای Elm
+theme:
+  name: gitbook
 nav:
-  - مقدمه‌ای بر Elm: index.md
-  - مفاهیم پایه: core_language.md
-  - معماری Elm:
+  - Introduction: index.md
+  - Core Language: core_language.md
+  - The Elm Architecture:
     - architecture/index.md
     - architecture/buttons.md
     - architecture/text_fields.md
     - architecture/forms.md
-  - نوع داده:
+  - Types:
     - types/index.md
     - types/reading_types.md
     - types/type_aliases.md
     - types/custom_types.md
     - types/pattern_matching.md
-  - مدیریت خطا:
+  - Error Handling:
     - error_handling/index.md
     - error_handling/maybe.md
     - error_handling/result.md
-  - دستور و اشتراک:
+  - Commands and Subscriptions:
     - effects/index.md
     - effects/http.md
     - effects/json.md
     - effects/random.md
     - effects/time.md
-  - نصب:
+  - Installation:
     - install/index.md
     - install/editor.md
     - install/elm.md
-  - تعامل با جاوااسکریپت:
+  - JavaScript Interop:
     - interop/index.md
     - interop/flags.md
     - interop/ports.md
     - interop/custom_elements.md
     - interop/limits.md
-  - وب اپلیکیشن:
+  - Web Apps:
     - web_apps/index.md
     - web_apps/navigation.md
     - web_apps/url_parsing.md
     - web_apps/modules.md
     - web_apps/structure.md
-  - بهینه‌سازی:
+  - Optimization:
     - optimization/index.md
     - optimization/lazy.md
     - optimization/keyed.md
     - optimization/asset_size.md
-  - مراحل بعدی: next_steps.md
-  - ضمیمه:
+  - Next Steps: next_steps.md
+  - Appendix:
     - appendix/types_as_sets.md
     - appendix/types_as_bits.md
     - appendix/function_types.md

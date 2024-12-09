@@ -1,6 +1,45 @@
 site_name: راهنمای Elm
+site_url: https://guide.elm-lang.ir
+site_description: راهنمای رسمی زبان برنامه‌نویسی Elm
+site_author: Novid Emami
+
 theme:
-  name: gitbook
+  name: material
+  language: fa
+  font:
+    text: Noto Sans Arabic
+  logo: assets/logo.svg
+  favicon: assets/favicon.ico
+  features:
+    - header.autohide
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.share
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+  plugins:
+    - offline
+    - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/novid
+      name: novid on GitHub
+
+    - icon: fontawesome/brands/linkedin 
+      link: https://linkedin.com/in/novid
+      name: novid on LinkedIn
+
 nav:
   - Introduction: index.md
   - Core Language: core_language.md

@@ -6,9 +6,9 @@
 
 با کلیک روی دکمه آبی "ویرایش" شروع و کد برنامه را مطالعه کنید.
 
-<div class="edit-link"><a href="https://elm-lang.org/examples/time">ویرایش</a></div>
+[ویرایش](https://elm-lang.org/examples/time){ .md-button .md-button--primary }
 
-```elm
+```elm linenums="1"
 import Browser
 import Html exposing (..)
 import Task
@@ -154,11 +154,11 @@ Task.perform AdjustTimeZone Time.here
 
 مطالعه مستندات ماژول [`Task`][task] بهترین راه برای درک این خط است. مستندات، به طور خاص، برای توضیح مفاهیم جدید نوشته شده‌اند و فکر می‌کنم بیان مجدد آن مفاهیم در این قسمت، خارج از موضوع این قسمت باشد. نکته این است که ما به سیستم زمان اجرا دستور می‌دهیم تا `Time.Zone` را هر جا که کد در حال اجرا است، به ما بدهد.
 
-> **تمرین:**
->
-> - یک دکمه اضافه کنید تا ساعت را متوقف و اشتراک `Time.every` را خاموش کند.
-> - با استفاده از ویژگی‌های [`style`][html.attributes]، ساعت دیجیتال را زیباتر کنید.
-> - از بسته [`elm/svg`][elm-svg] استفاده کنید تا یک ساعت آنالوگ با عقربه ثانیه شمار قرمز بسازید!
+!!! abstract "تمرین"
+
+	- یک دکمه اضافه کنید تا ساعت را متوقف و اشتراک `Time.every` را خاموش کند.
+	- با استفاده از ویژگی‌های [`style`][html.attributes]، ساعت دیجیتال را زیباتر کنید.
+	- از بسته [`elm/svg`][elm-svg] استفاده کنید تا یک ساعت آنالوگ با عقربه ثانیه شمار قرمز بسازید!
 
 [elm-time]: https://package.elm-lang.org/packages/elm/time/latest
 [tz]: https://en.wikipedia.org/wiki/Time_zone

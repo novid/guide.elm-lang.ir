@@ -10,7 +10,7 @@
 
 فرض کنید می‌خواهیم تاریخ را بومی‌سازی کنیم، اما هنوز عملکرد آن به زبان Elm پیاده‌سازی نشده است. شاید بخواهید تابعی بنویسید که تاریخ را بومی‌سازی کند:
 
-```javascript
+```javascript linenums="1"
 //
 //   localizeDate('sr-RS', 12, 5) === "петак, 1. јун 2012."
 //   localizeDate('en-GB', 12, 5) === "Friday, 1 June 2012"
@@ -31,7 +31,7 @@ function localizeDate(lang, year, month)
 
 اما چگونه می‌توانیم از این تابع در Elm استفاده کنیم؟! مرورگرهای وب به شما اجازه می‌دهند نوع جدیدی از DOM Node به نام عنصر سفارشی را به این شکل ایجاد کنید:
 
-```javascript
+```javascript linenums="1"
 //
 //   <intl-date lang="sr-RS" year="2012" month="5">
 //   <intl-date lang="en-GB" year="2012" month="5">

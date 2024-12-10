@@ -28,31 +28,35 @@
 
 فکر می‌کنم دستورات و اشتراک‌ها زمانی معنا پیدا می‌کنند که کاربرد واقعی آن‌ها را مشاهده کنید. پس بیایید این کار را انجام دهیم!
 
-> **نکته ۱:** برخی از خوانندگان ممکن است نگران اندازه برنامه باشند. "یک سیستم زمان اجرا؟ به نظر بزرگ می‌رسد!" اینطور نیست! در واقع، اندازه و حجم برنامه‌های Elm در مقایسه با گزینه‌های محبوب [به طرز استثنایی کمتر است][small-assets].
->
-> **نکته ۲:** در نمونه‌های آتی، از بسته‌های موجود در وبسایت [`package.elm-lang.org`](https://package.elm-lang.org) استفاده خواهیم کرد. قبلا با چندتا کار کرده‌ایم:
->
-> - [`elm/core`](https://package.elm-lang.org/packages/elm/core/latest/)
-> - [`elm/html`](https://package.elm-lang.org/packages/elm/html/latest/)
->
-> اما حالا شروع به استفاده از بسته‌های پیشرفته‌تری خواهیم کرد:
->
-> - [`elm/http`](https://package.elm-lang.org/packages/elm/http/latest/)
-> - [`elm/json`](https://package.elm-lang.org/packages/elm/json/latest/)
-> - [`elm/random`](https://package.elm-lang.org/packages/elm/random/latest/)
-> - [`elm/time`](https://package.elm-lang.org/packages/elm/time/latest/)
->
-> با این حال، بسته‌های بیشتری در وبسایت `package.elm-lang.org` وجود دارد! بنابراین، وقتی برنامه Elm را به صورت محلی ایجاد می‌کنید، احتمالا شامل اجرای برخی دستورات در ترمینال خواهد بود:
->
-> ```bash
-> elm init
-> elm install elm/http
-> elm install elm/random
-> ```
->
-> این کار، یک فایل `elm.json` با وابستگی‌های مربوط به `elm/http` و `elm/random` برپا می‌کند.
->
-> در نمونه‌های آتی، بسته‌هایی را که استفاده می‌کنیم ذکر خواهم کرد. امیدوارم این توضیحات کمی درباره این فرآیند زمینه‌سازی کرده باشد!
+!!! tip "نکته اول"
+
+	برخی از خوانندگان ممکن است نگران اندازه برنامه باشند. "یک سیستم زمان اجرا؟ به نظر بزرگ می‌رسد!" اینطور نیست! در واقع، اندازه و حجم برنامه‌های Elm در مقایسه با گزینه‌های محبوب [به طرز استثنایی کمتر است][small-assets].
+
+!!! tip "نکته دوم"
+
+	در نمونه‌های آتی، از بسته‌های موجود در وبسایت [`package.elm-lang.org`](https://package.elm-lang.org) استفاده خواهیم کرد. قبلا با چندتا کار کرده‌ایم:
+
+	- [`elm/core`](https://package.elm-lang.org/packages/elm/core/latest/)
+	- [`elm/html`](https://package.elm-lang.org/packages/elm/html/latest/)
+
+	اما حالا شروع به استفاده از بسته‌های پیشرفته‌تری خواهیم کرد:
+
+	- [`elm/http`](https://package.elm-lang.org/packages/elm/http/latest/)
+	- [`elm/json`](https://package.elm-lang.org/packages/elm/json/latest/)
+	- [`elm/random`](https://package.elm-lang.org/packages/elm/random/latest/)
+	- [`elm/time`](https://package.elm-lang.org/packages/elm/time/latest/)
+
+	با این حال، بسته‌های بیشتری در وبسایت `package.elm-lang.org` وجود دارد! بنابراین، وقتی برنامه Elm را به صورت محلی ایجاد می‌کنید، احتمالا شامل اجرای برخی دستورات در ترمینال خواهد بود:
+
+	```bash
+	elm init
+	elm install elm/http
+	elm install elm/random
+	```
+
+	این کار، یک فایل `elm.json` با وابستگی‌های مربوط به `elm/http` و `elm/random` برپا می‌کند.
+
+	در نمونه‌های آتی، بسته‌هایی را که استفاده می‌کنیم ذکر خواهم کرد. امیدوارم این توضیحات کمی درباره این فرآیند زمینه‌سازی کرده باشد!
 
 [browser.sandbox]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#sandbox
 [benchmark]: https://elm-lang.org/blog/blazing-fast-html-round-two

@@ -16,7 +16,7 @@
 
 در اینجا یک برنامه کوچک وجود دارد که به شما اجازه می‌دهد یک عدد را افزایش و کاهش دهید:
 
-```elm
+```elm linenums="1"
 import Browser
 import Html exposing (Html, button, div, text)
 import Html.Events exposing (onClick)

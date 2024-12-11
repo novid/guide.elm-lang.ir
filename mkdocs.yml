@@ -53,6 +53,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tilde
+  - toc:
+      permalink: true
+      permalink_title: Permalink
 
 nav:
   - مقدمه: index.md

@@ -1,12 +1,14 @@
 # مقدار تصادفی
 
-تاکنون فقط دستورات مربوط به درخواست HTTP را دیده‌ایم. می‌توانیم دستورات دیگری، مانند تولید مقادیر تصادفی، نیز صادر کنیم! بنابراین، یک برنامه می‌سازیم که با پرتاب تاس، یک عدد تصادفی بین ۱ و ۶ تولید می‌کند.
+تاکنون فقط دستورات مربوط به درخواست HTTP را دیده‌ایم. می‌توانیم دستورات دیگری، مانند تولید مقادیر تصادفی نیز صادر کنیم! بنابراین، یک برنامه می‌سازیم که با پرتاب تاس، یک عدد تصادفی بین ۱ و ۶ تولید می‌کند.
 
 برای دیدن این برنامه، روی دکمه "ویرایش" کلیک کنید. چند عدد تصادفی تولید و به کد نگاه کنید تا ببینید چگونه کار می‌کند. **اکنون روی دکمه ویرایش کلیک کنید!**
 
 [ویرایش](https://elm-lang.org/examples/numbers){ .md-button .md-button--primary }
 
 ```elm linenums="1"
+module Main exposing (Model, Msg(..), init, main, subscriptions, update, view)
+
 import Browser
 import Html exposing (..)
 import Html.Events exposing (..)
@@ -18,12 +20,12 @@ import Random
 
 
 main =
-  Browser.element
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    , view = view
-    }
+    Browser.element
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
 
 
 
@@ -31,15 +33,15 @@ main =
 
 
 type alias Model =
-  { dieFace : Int
-  }
+    { dieFace : Int
+    }
 
 
-init : () -> (Model, Cmd Msg)
+init : () -> ( Model, Cmd Msg )
 init _ =
-  ( Model 1
-  , Cmd.none
-  )
+    ( Model 1
+    , Cmd.none
+    )
 
 
 
@@ -47,22 +49,22 @@ init _ =
 
 
 type Msg
-  = Roll
-  | NewFace Int
+    = Roll
+    | NewFace Int
 
 
-update : Msg -> Model -> (Model, Cmd Msg)
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-  case msg of
-    Roll ->
-      ( model
-      , Random.generate NewFace (Random.int 1 6)
-      )
+    case msg of
+        Roll ->
+            ( model
+            , Random.generate NewFace (Random.int 1 6)
+            )
 
-    NewFace newFace ->
-      ( Model newFace
-      , Cmd.none
-      )
+        NewFace newFace ->
+            ( Model newFace
+            , Cmd.none
+            )
 
 
 
@@ -71,7 +73,7 @@ update msg model =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-  Sub.none
+    Sub.none
 
 
 
@@ -80,10 +82,10 @@ subscriptions model =
 
 view : Model -> Html Msg
 view model =
-  div []
-    [ h1 [] [ text (String.fromInt model.dieFace) ]
-    , button [ onClick Roll ] [ text "Roll" ]
-    ]
+    div []
+        [ h1 [] [ text (String.fromInt model.dieFace) ]
+        , button [ onClick Roll ] [ text "Roll" ]
+        ]
 ```
 
 موضوع جدیدی که در اینجا وجود دارد، دستوری است که در تابع `update` صادر می‌شود:
@@ -96,9 +98,9 @@ Random.generate NewFace (Random.int 1 6)
 
 ## تولیدکننده‌های تصادفی {#random-generators}
 
-ما از بسته [`elm/random`][elm-random] و ماژول [`Random`][random] برای این کار استفاده می‌کنیم.
+از بسته [`elm/random`][elm-random] و ماژول [`Random`][random] برای این کار استفاده می‌کنیم.
 
-ایده اصلی این است که یک `Generator` تصادفی داریم که توصیف می‌کند _چگونه_ یک مقدار تصادفی تولید شود. برای نمونه:
+ایده اصلی این است که یک `Generator` داریم که توصیف می‌کند _چگونه_ یک مقدار تصادفی تولید شود. برای نمونه:
 
 ```elm
 import Random
@@ -124,7 +126,7 @@ usuallyTrue =
 generate : (a -> msg) -> Generator a -> Cmd msg
 ```
 
-زمانی که دستور اجرا می‌شود، `Generator` مقداری تولید می‌کند که در ادامه به یک پیام برای تابع `update` تبدیل می‌شود. در نمونه قبل، `Generator` مقداری بین ۱ و ۶ تولید می‌کند و به یک پیام مانند `NewFace 1` یا `NewFace 4` تبدیل می‌شود. این تمام چیزی است که برای دریافت پرتاب‌های تصادفی تاس نیاز داریم، اما تولیدکننده‌ها می‌توانند کارهای بیشتری انجام دهند!
+زمانی که دستور اجرا می‌شود، `Generator` مقداری تولید می‌کند که در ادامه به یک پیام برای تابع `update` تبدیل می‌شود. در نمونه قبل، `Generator` مقداری بین ۱ و ۶ تولید می‌کند و به یک پیام مانند `NewFace 1` یا `NewFace 4` تبدیل می‌شود. این تمام چیزی است که برای دریافت پرتاب تصادفی تاس نیاز داریم، اما تولیدکننده‌ها می‌توانند کارهای بیشتری انجام دهند!
 
 ## ترکیب تولیدکننده‌ها {#combining-generators}
 

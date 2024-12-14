@@ -2,9 +2,11 @@
 
 در یک وب اپلیکیشن واقعی، می‌خواهیم محتوای متفاوتی را برای نشانی‌های مختلف نمایش دهیم:
 
-- `/search`
-- `/search?q=seiza`
-- `/settings`
+```
+/search
+/search?q=seiza
+/settings
+```
 
 این کار چگونه انجام می‌شود؟ از بسته [`elm/url`][elm-url] برای تجزیه و تحلیل رشته‌های خام به ساختار داده‌های زیبا در Elm استفاده می‌کنیم. درک عملکرد این بسته ممکن است در ابتدا کمی گُنگ باشد، بنابراین با ارایه نمونه‌های مختلف آن را توضیح می‌دهیم!
 
@@ -12,45 +14,51 @@
 
 فرض کنید یک وبسایت هنری داریم که شامل نشانی‌های زیر می‌شود:
 
-- `/topic/architecture`
-- `/topic/painting`
-- `/topic/sculpture`
-- `/blog/42`
-- `/blog/123`
-- `/blog/451`
-- `/user/tom`
-- `/user/sue`
-- `/user/sue/comment/11`
-- `/user/sue/comment/51`
+```
+/topic/architecture
+/topic/painting
+/topic/sculpture
+/blog/42
+/blog/123
+/blog/451
+/user/tom
+/user/sue
+/user/sue/comment/11
+/user/sue/comment/51
+```
 
 در این مورد، صفحات موضوع، پست‌های وبلاگ، اطلاعات کاربری و راهی برای جستجوی نظرات کاربران داریم. از ماژول [`Url.Parser`][url.parser] برای نوشتن یک تحلیل‌گر URL استفاده می‌کنیم:
 
-```elm
-import Url.Parser exposing (Parser, (</>), int, map, oneOf, s, string)
+```elm linenums="1"
+module Main exposing (Route(..), routeParser)
+
+import Url.Parser exposing ((</>), Parser, int, map, oneOf, s, string)
+
 
 type Route
-  = Topic String
-  | Blog Int
-  | User String
-  | Comment String Int
+    = Topic String
+    | Blog Int
+    | User String
+    | Comment String Int
+
 
 routeParser : Parser (Route -> a) a
 routeParser =
-  oneOf
-    [ map Topic   (s "topic" </> string)
-    , map Blog    (s "blog" </> int)
-    , map User    (s "user" </> string)
-    , map Comment (s "user" </> string </> s "comment" </> int)
-    ]
+    oneOf
+        [ map Topic (s "topic" </> string)
+        , map Blog (s "blog" </> int)
+        , map User (s "user" </> string)
+        , map Comment (s "user" </> string </> s "comment" </> int)
+        ]
+
+
 
 -- /topic/pottery        ==>  Just (Topic "pottery")
 -- /topic/collage        ==>  Just (Topic "collage")
 -- /topic/               ==>  Nothing
-
 -- /blog/42              ==>  Just (Blog 42)
 -- /blog/123             ==>  Just (Blog 123)
 -- /blog/mosaic          ==>  Nothing
-
 -- /user/tom/            ==>  Just (User "tom")
 -- /user/sue/            ==>  Just (User "sue")
 -- /user/bob/comment/42  ==>  Just (Comment "bob" 42)
@@ -65,29 +73,37 @@ routeParser =
 
 فرض کنید یک وبلاگ شخصی داریم که شامل نشانی‌های زیر می‌شود:
 
-- `/blog/12/the-history-of-chairs`
-- `/blog/13/the-endless-september`
-- `/blog/14/whale-facts`
-- `/blog/`
-- `/blog?q=whales`
-- `/blog?q=seiza`
+```
+/blog/12/the-history-of-chairs
+/blog/13/the-endless-september
+/blog/14/whale-facts
+/blog/
+/blog?q=whales
+/blog?q=seiza
+```
 
 در این مورد، صفحات پست‌های وبلاگ فردی و یک نمای کلی از وبلاگ با یک پارامتر جستجوی اختیاری داریم. از ماژول [`Url.Parser.Query`][url.parser.query] برای نوشتن یک تحلیل‌گر URL استفاده می‌کنیم:
 
-```elm
-import Url.Parser exposing (Parser, (</>), (<?>), int, map, oneOf, s, string)
+```elm linenums="1"
+module Main exposing (Route(..), routeParser)
+
+import Url.Parser exposing ((</>), (<?>), Parser, int, map, oneOf, s, string)
 import Url.Parser.Query as Query
 
+
 type Route
-  = BlogPost Int String
-  | BlogQuery (Maybe String)
+    = BlogPost Int String
+    | BlogQuery (Maybe String)
+
 
 routeParser : Parser (Route -> a) a
 routeParser =
-  oneOf
-    [ map BlogPost  (s "blog" </> int </> string)
-    , map BlogQuery (s "blog" <?> Query.string "q")
-    ]
+    oneOf
+        [ map BlogPost (s "blog" </> int </> string)
+        , map BlogQuery (s "blog" <?> Query.string "q")
+        ]
+
+
 
 -- /blog/14/whale-facts  ==>  Just (BlogPost 14 "whale-facts")
 -- /blog/14              ==>  Nothing
@@ -99,28 +115,36 @@ routeParser =
 -- /blog/?query=whales   ==>  Just (BlogQuery Nothing)
 ```
 
-عملگرهای `</>` و `<?>` این امکان را فراهم می‌کنند تا کدی بنویسیم که بطور قابل توجهی شبیه به URLهای واقعی باشد که می‌خواهیم آن‌ها را تجزیه و تحلیل کنیم. افزودن ماژول `Url.Parser.Query` به ما اجازه داد تا پارامترهای جستجو مانند `?q=seiza` را مدیریت کنیم.
+عملگرهای فوق این امکان را فراهم می‌کنند تا کدی بنویسیم که بطور قابل توجهی شبیه به URL واقعی باشد که می‌خواهیم آن‌ها را تجزیه و تحلیل کنیم. افزودن ماژول `Url.Parser.Query` به ما اجازه داد تا پارامترهای جستجو مانند `?q=seiza` را مدیریت کنیم.
 
 ## نمونه سوم {#example-3}
 
 فرض کنید یک وبسایت مستندات فنی داریم که شامل نشانی‌های زیر می‌شود:
 
-- `/Basics`
-- `/Maybe`
-- `/List`
-- `/List#map`
-- `/List#filter`
-- `/List#foldl`
+```
+/Basics
+/Maybe
+/List
+/List#map
+/List#filter
+/List#foldl
+```
 
 در این مورد، می‌توانیم از تابع [`fragment`][fragment] در ماژول `Url.Parser` برای مدیریت این نشانی‌ها استفاده کنیم:
 
-```elm
+```elm linenums="1"
+module Main exposing (Docs, docsParser)
+
+
 type alias Docs =
-  (String, Maybe String)
+    ( String, Maybe String )
+
 
 docsParser : Parser (Docs -> a) a
 docsParser =
-  map Tuple.pair (string </> fragment identity)
+    map Tuple.pair (string </> fragment identity)
+
+
 
 -- /Basics     ==>  Just ("Basics", Nothing)
 -- /Maybe      ==>  Just ("Maybe", Nothing)

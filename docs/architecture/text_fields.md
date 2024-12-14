@@ -7,8 +7,10 @@
 [ویرایش](https://elm-lang.org/examples/text-fields){ .md-button .md-button--primary }
 
 ```elm linenums="1"
+module Main exposing (Model, Msg(..), init, main, update, view)
+
 import Browser
-import Html exposing (Html, Attribute, div, input, text)
+import Html exposing (Attribute, Html, div, input, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
 
@@ -18,7 +20,7 @@ import Html.Events exposing (onInput)
 
 
 main =
-  Browser.sandbox { init = init, update = update, view = view }
+    Browser.sandbox { init = init, update = update, view = view }
 
 
 
@@ -26,13 +28,13 @@ main =
 
 
 type alias Model =
-  { content : String
-  }
+    { content : String
+    }
 
 
 init : Model
 init =
-  { content = "" }
+    { content = "" }
 
 
 
@@ -40,14 +42,14 @@ init =
 
 
 type Msg
-  = Change String
+    = Change String
 
 
 update : Msg -> Model -> Model
 update msg model =
-  case msg of
-    Change newContent ->
-      { model | content = newContent }
+    case msg of
+        Change newContent ->
+            { model | content = newContent }
 
 
 
@@ -56,10 +58,10 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-  div []
-    [ input [ placeholder "Text to reverse", value model.content, onInput Change ] []
-    , div [] [ text (String.reverse model.content) ]
-    ]
+    div []
+        [ input [ placeholder "Text to reverse", value model.content, onInput Change ] []
+        , div [] [ text (String.reverse model.content) ]
+        ]
 ```
 
 این کد یک تغییر جزیی از برنامه قبلی است. پس از مدل‌سازی اولیه داده، چند پیام تعریف می‌کنید. تعیین می‌کنید که چگونه تابع `update` اجرا شود و در ادامه تابع `view` را می‌سازید. تفاوت در شیوه مدل‌سازی داده، نمایش محتوا و پاسخ به پیام‌های دریافتی است. بیایید به توضیح آن بپردازیم!
@@ -95,16 +97,18 @@ view model =
 
 یک `<div>` با دو فرزند ایجاد می‌کنیم. فرزند `<input>` مورد نظر ماست که سه ویژگی دارد:
 
-- `placeholder` متنی است که وقتی محتوایی وجود ندارد نمایش داده می‌شود
-- `value` محتوای فعلی این `<input>` است
-- `onInput` پیام‌ها را زمانی که کاربر در این `<input>` تایپ می‌کند ارسال می‌کند
+- `placeholder` متنی است که وقتی محتوایی وجود ندارد نمایش داده می‌شود.
+- `value` محتوای فعلی این `<input>` است.
+- `onInput` پیام‌ها را زمانی که کاربر در این `<input>` تایپ می‌کند ارسال می‌کند.
 
 تایپ کردن "bard" این چهار پیام را تولید می‌کند:
 
-۱. `Change "b"`
-۲. `Change "ba"`
-۳. `Change "bar"`
-۴. `Change "bard"`
+```
+1. Change "b"
+2. Change "ba"
+3. Change "bar"
+4. Change "bard"
+```
 
 این پیام‌ها به تابع `update` ارسال می‌شوند.
 
@@ -125,10 +129,12 @@ update msg model =
 
 هنگام دریافت پیام مبنی بر تغییر `<input>`، محتوای مدل را بروزرسانی می‌کنیم. بنابراین اگر "bard" را تایپ کنید، پیام‌های دریافتی، مدل‌های زیر را تولید می‌کنند:
 
-۱. `{ content = "b" }`
-۲. `{ content = "ba" }`
-۳. `{ content = "bar" }`
-۴. `{ content = "bard" }`
+```
+1. { content = "b" }
+2. { content = "ba" }
+3. { content = "bar" }
+4. { content = "bard" }
+```
 
 ما باید این اطلاعات را به طور صریح در مدل خود پیگیری کنیم، در غیر این صورت هیچ راهی برای نمایش متن معکوس شده در تابع `view` نخواهیم داشت!
 

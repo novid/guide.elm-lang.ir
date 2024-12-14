@@ -19,7 +19,7 @@ String.repeat : Int -> (String -> String)
 
 این یک تابع است که یک مقدار `Int` می‌گیرد و سپس _یک_ تابع دیگر تولید می‌کند. بیایید این را در عمل ببینیم:
 
-```elm
+```bash
 > String.repeat
 <function> : Int -> String -> String
 
@@ -55,12 +55,16 @@ List.map : (a -> b) -> List a -> List b
 
 این تابع دو آرگومان می‌گیرد: یک تابع و یک لیست. از آنجا، هر عنصر لیست را با آن تابع، دگرگون می‌سازد. در ادامه، چند نمونه آورده شده است:
 
-- `List.map String.reverse ["part","are"] == ["trap","era"]`
-- `List.map String.length ["part","are"] == [4,3]`
+```elm
+List.map String.reverse ["part","are"] == ["trap","era"]
+List.map String.length ["part","are"] == [4,3]
+```
 
 به یاد دارید که نوع داده `String.repeat 4` به تنهایی `String -> String` بود؟ خوب، به این معنی است که می‌توانیم بگوییم:
 
-- `List.map (String.repeat 2) ["ha","choo"] == ["haha","choochoo"]`
+```elm
+List.map (String.repeat 2) ["ha","choo"] == ["haha","choochoo"]
+```
 
 عبارت `(String.repeat 2)` یک تابع از نوع `String -> String` است، بنابراین می‌توانیم به طور مستقیم از آن استفاده کنیم. نیازی به استفاده از `(\str -> String.repeat 2 str)` نیست.
 
@@ -90,6 +94,7 @@ Elm یک [عملگر پایپ][pipe] دارد که به فراخوانی جزی�
 
 ```elm
 -- BEFORE
+
 sanitize : String -> Maybe Int
 sanitize input =
   String.toInt (String.trim input)
@@ -99,6 +104,7 @@ sanitize input =
 
 ```elm
 -- AFTER
+
 sanitize : String -> Maybe Int
 sanitize input =
   input

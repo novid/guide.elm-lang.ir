@@ -8,7 +8,7 @@
 
 ## ایجاد عنصر سفارشی {#creating-custom-elements}
 
-فرض کنید می‌خواهیم تاریخ را بومی‌سازی کنیم، اما هنوز عملکرد آن به زبان Elm پیاده‌سازی نشده است. شاید بخواهید تابعی بنویسید که تاریخ را بومی‌سازی کند:
+فرض کنید می‌خواهیم تاریخ را بومی‌سازی کنیم، اما هنوز عملکرد آن در Elm پیاده‌سازی نشده است. شاید بخواهید تابعی بنویسید که تاریخ را بومی‌سازی کند:
 
 ```javascript linenums="1"
 //
@@ -61,18 +61,21 @@ customElements.define('intl-date',
 
 این کار را قبل از راه‌اندازی کد Elm انجام دهید تا بتوانید کدی مانند این را در Elm بنویسید:
 
-```elm
+```elm linenums="1"
+module Main exposing (viewDate)
+
 import Html exposing (Html, node)
-import Html.Attributes (attribute)
+import Html.Attributes exposing (attribute)
+
 
 viewDate : String -> Int -> Int -> Html msg
 viewDate lang year month =
-  node "intl-date"
-    [ attribute "lang" lang
-    , attribute "year" (String.fromInt year)
-    , attribute "month" (String.fromInt month)
-    ]
-    []
+    node "intl-date"
+        [ attribute "lang" lang
+        , attribute "year" (String.fromInt year)
+        , attribute "month" (String.fromInt month)
+        ]
+        []
 ```
 
 اکنون می‌توانید با فراخوانی تابع `viewDate`، به اطلاعات بومی‌سازی شده در قسمت `view` دسترسی داشته باشید.
@@ -81,11 +84,10 @@ viewDate lang year month =
 
 ## اطلاعات بیشتر {#more-info}
 
-لوک وِست‌بی تجربه بیشتری در زمینه عنصر سفارشی دارد و فکر می‌کنم سخنرانی او در کنفرانس Elm Europe مقدمه‌ای عالی باشد!
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/tyFe9Pw6TVE?si=S-N2nz-LEaRdEfM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Luke Westby تجربه بیشتری در زمینه عنصر سفارشی دارد و فکر می‌کنم سخنرانی او در کنفرانس Elm Europe مقدمه‌ای عالی باشد!
 
 مستندات مربوط به عنصر سفارشی ممکن است کمی گیج‌کننده باشد. اگر استفاده از آن انتخاب مناسبی برای پروژه شما است، امیدوارم این مقدمه برای شروع گنجاندن منطقی ساده برای ماژول `Intl` در مرورگر وب یا حتی ویجت‌های بزرگ React کافی باشد.
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/tyFe9Pw6TVE?si=S-N2nz-LEaRdEfM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 [custom-elements]: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 [i18n]: https://github.com/elm-community/js-integration-examples/tree/master/internationalization

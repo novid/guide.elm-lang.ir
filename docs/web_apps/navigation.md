@@ -38,92 +38,112 @@ application :
 
 **زمانی که URL تغییر می‌کند**، `Url` جدید به `onUrlChange` ارسال می‌شود. پیام حاصل به تابع `update` می‌رود که در آن می‌توان تصمیم گرفت چگونه صفحه جدید را نمایش دهیم.
 
-بنابراین، بجای بارگیری HTML جدید، این سه قابلیت جدید به شما کنترل کامل بر تغییرات URL را می‌دهند. بیایید آن را در عمل ببینیم!
+بنابراین، بجای بارگیری HTML، این سه قابلیت جدید به شما امکان کنترل کامل بر تغییرات URL را می‌دهند. بیایید آن را در عمل ببینیم!
 
 ## نمونه کد {#example}
 
 با برنامه پایه `Browser.application` شروع می‌کنیم. این برنامه فقط URL فعلی را پیگیری می‌کند. اکنون کد را مرور کنید! تقریبا تمام چیزهای جدید و جالب در تابع `update` اتفاق می‌افتد که در ادامه به جزییات آن خواهیم پرداخت:
 
 ```elm linenums="1"
+module Main exposing (Model, Msg(..), init, main, subscriptions, update, view, viewLink)
+
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Url
 
+
+
 -- MAIN
+
 
 main : Program () Model Msg
 main =
-  Browser.application
-    { init = init
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
-    , onUrlChange = UrlChanged
-    , onUrlRequest = LinkClicked
-    }
+    Browser.application
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        , onUrlChange = UrlChanged
+        , onUrlRequest = LinkClicked
+        }
+
+
 
 -- MODEL
 
+
 type alias Model =
-  { key : Nav.Key
-  , url : Url.Url
-  }
+    { key : Nav.Key
+    , url : Url.Url
+    }
+
 
 init : () -> Url.Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
-  ( Model key url, Cmd.none )
+    ( Model key url, Cmd.none )
+
+
 
 -- UPDATE
 
+
 type Msg
-  = LinkClicked Browser.UrlRequest
-  | UrlChanged Url.Url
+    = LinkClicked Browser.UrlRequest
+    | UrlChanged Url.Url
+
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-  case msg of
-    LinkClicked urlRequest ->
-      case urlRequest of
-        Browser.Internal url ->
-          ( model, Nav.pushUrl model.key (Url.toString url) )
+    case msg of
+        LinkClicked urlRequest ->
+            case urlRequest of
+                Browser.Internal url ->
+                    ( model, Nav.pushUrl model.key (Url.toString url) )
 
-        Browser.External href ->
-          ( model, Nav.load href )
+                Browser.External href ->
+                    ( model, Nav.load href )
 
-    UrlChanged url ->
-      ( { model | url = url }
-      , Cmd.none
-      )
+        UrlChanged url ->
+            ( { model | url = url }
+            , Cmd.none
+            )
+
+
 
 -- SUBSCRIPTIONS
 
+
 subscriptions : Model -> Sub Msg
 subscriptions _ =
-  Sub.none
+    Sub.none
+
+
 
 -- VIEW
 
+
 view : Model -> Browser.Document Msg
 view model =
-  { title = "URL Interceptor"
-  , body =
-      [ text "The current URL is: "
-      , b [] [ text (Url.toString model.url) ]
-      , ul []
-          [ viewLink "/home"
-          , viewLink "/profile"
-          , viewLink "/reviews/the-century-of-the-self"
-          , viewLink "/reviews/public-opinion"
-          , viewLink "/reviews/shah-of-shahs"
-          ]
-      ]
-  }
+    { title = "URL Interceptor"
+    , body =
+        [ text "The current URL is: "
+        , b [] [ text (Url.toString model.url) ]
+        , ul []
+            [ viewLink "/home"
+            , viewLink "/profile"
+            , viewLink "/reviews/the-century-of-the-self"
+            , viewLink "/reviews/public-opinion"
+            , viewLink "/reviews/shah-of-shahs"
+            ]
+        ]
+    }
+
 
 viewLink : String -> Html msg
 viewLink path =
-  li [] [ a [ href path ] [ text path ] ]
+    li [] [ a [ href path ] [ text path ] ]
 ```
 
 تابع `update` می‌تواند پیام‌های `LinkClicked` یا `UrlChanged` را مدیریت کند. در شاخه `LinkClicked` چیزهای جدید و جالب زیادی وجود دارد، بنابراین ابتدا بر روی آن تمرکز می‌کنیم!
@@ -140,7 +160,7 @@ type UrlRequest
 
 نوع `Internal` برای هر لینکی است که در همان دامنه باقی می‌ماند. بنابراین، اگر در حال مرور `https://example.com` هستید، لینک‌های داخلی شامل چیزهایی مانند `settings#privacy`، `/home`، `https://example.com/home` و `//example.com/home` هستند.
 
-نوع `External` برای هر لینکی است که به دامنه‌ای دیگر می‌رود. لینک‌هایی مانند `https://elm-lang.org/examples`، `https://static.example.com` و `http://example.com/home` همه به دامنه‌ای دیگر می‌روند. توجه داشته باشید که تغییر پروتکل از `https` به `http` به عنوان یک دامنه متفاوت در نظر گرفته می‌شود!
+نوع `External` برای هر لینکی است که به دامنه‌ای دیگر می‌رود. لینک‌هایی مانند `https://elm-lang.org/examples`، `https://static.example.com` و `http://example.com/home` همه به دامنه‌ای دیگر می‌روند. توجه داشته باشید که تغییر پروتکل از `https` به `http` به عنوان یک تغییر دامنه در نظر گرفته می‌شود!
 
 هر لینکی که کلیک شود، برنامه یک پیام `LinkClicked` ایجاد کرده و آن را به تابع `update` ارسال می‌کند. اینجاست که بیشتر کدهای جدید و جالب را می‌بینیم!
 
@@ -181,7 +201,7 @@ update msg model =
 
 ## `UrlChanged`
 
-چندین راه برای دریافت پیام‌های `UrlChanged` وجود دارد. به تازگی دیدیم که `pushUrl` آن‌ها را تولید می‌کند، اما فشردن دکمه‌های `BACK` و `FORWARD` مرورگر نیز آن‌ها را تولید می‌کند.همانطور که در نکات قبلی گفتم، وقتی یک پیام `LinkClicked` دریافت می‌کنید، ممکن است دستور `pushUrl` بلافاصله صادر نشود.
+چندین راه برای دریافت پیام‌های `UrlChanged` وجود دارد. به تازگی دیدیم که `pushUrl` آن‌ها را تولید می‌کند، اما فشردن دکمه‌های `BACK` و `FORWARD` مرورگر نیز آن‌ها را تولید می‌کند. همانطور که در نکات قبلی گفتم، وقتی یک پیام `LinkClicked` دریافت می‌کنید، ممکن است دستور `pushUrl` بلافاصله صادر نشود.
 
 بنابراین نکته خوب در مورد داشتن یک پیام جداگانه `UrlChanged` این است که مهم نیست URL چگونه یا چه زمانی تغییر کرده است. تنها چیزی که باید بدانید این است که تغییر کرده است!
 

@@ -2,11 +2,13 @@
 
 اکنون یک فرم ابتدایی خواهیم ساخت. این فرم دارای یک فیلدهایی برای نام، گذرواژه و تایید گذرواژه است. همچنین برخی از اعتبارسنجی‌های بسیار ساده را انجام خواهیم داد تا بررسی کنیم آیا گذرواژه‌ها مطابقت دارند یا خیر.
 
-در ادامه، کد برنامه قرار دارد. روی دکمه آبی "ویرایش" کلیک تا در ویرایشگر آنلاین با آن کار کنید. سعی کنید یک اشتباه تایپی وارد کنید تا برخی از پیام‌های خطا را ببینید. سعی کنید یک فیلد رکورد مانند `password` یا یک تابع مانند `placeholder` را به اشتباه بنویسید. **اکنون روی دکمه ویرایش کلیک کنید!**
+در ادامه، کد برنامه قرار دارد. روی دکمه "ویرایش" کلیک تا در ویرایشگر آنلاین با آن کار کنید. سعی کنید یک اشتباه تایپی وارد کنید تا برخی از پیام‌های خطا را ببینید. سعی کنید یک فیلد رکورد مانند `password` یا یک تابع مانند `placeholder` را به اشتباه بنویسید. **اکنون روی دکمه ویرایش کلیک کنید!**
 
 [ویرایش](https://elm-lang.org/examples/forms){ .md-button .md-button--primary }
 
 ```elm linenums="1"
+module Main exposing (Model, Msg(..), init, main, update, view, viewInput, viewValidation)
+
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -18,7 +20,7 @@ import Html.Events exposing (onInput)
 
 
 main =
-  Browser.sandbox { init = init, update = update, view = view }
+    Browser.sandbox { init = init, update = update, view = view }
 
 
 
@@ -26,15 +28,15 @@ main =
 
 
 type alias Model =
-  { name : String
-  , password : String
-  , passwordAgain : String
-  }
+    { name : String
+    , password : String
+    , passwordAgain : String
+    }
 
 
 init : Model
 init =
-  Model "" "" ""
+    Model "" "" ""
 
 
 
@@ -42,22 +44,22 @@ init =
 
 
 type Msg
-  = Name String
-  | Password String
-  | PasswordAgain String
+    = Name String
+    | Password String
+    | PasswordAgain String
 
 
 update : Msg -> Model -> Model
 update msg model =
-  case msg of
-    Name name ->
-      { model | name = name }
+    case msg of
+        Name name ->
+            { model | name = name }
 
-    Password password ->
-      { model | password = password }
+        Password password ->
+            { model | password = password }
 
-    PasswordAgain password ->
-      { model | passwordAgain = password }
+        PasswordAgain password ->
+            { model | passwordAgain = password }
 
 
 
@@ -66,25 +68,26 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-  div []
-    [ viewInput "text" "Name" model.name Name
-    , viewInput "password" "Password" model.password Password
-    , viewInput "password" "Re-enter Password" model.passwordAgain PasswordAgain
-    , viewValidation model
-    ]
+    div []
+        [ viewInput "text" "Name" model.name Name
+        , viewInput "password" "Password" model.password Password
+        , viewInput "password" "Re-enter Password" model.passwordAgain PasswordAgain
+        , viewValidation model
+        ]
 
 
 viewInput : String -> String -> String -> (String -> msg) -> Html msg
 viewInput t p v toMsg =
-  input [ type_ t, placeholder p, value v, onInput toMsg ] []
+    input [ type_ t, placeholder p, value v, onInput toMsg ] []
 
 
 viewValidation : Model -> Html msg
 viewValidation model =
-  if model.password == model.passwordAgain then
-    div [ style "color" "green" ] [ text "OK" ]
-  else
-    div [ style "color" "red" ] [ text "Passwords do not match!" ]
+    if model.password == model.passwordAgain then
+        div [ style "color" "green" ] [ text "OK" ]
+
+    else
+        div [ style "color" "red" ] [ text "Passwords do not match!" ]
 ```
 
 این برنامه بسیار شبیه به [برنامه فیلد متنی](text_fields.md) است اما با فیلدهای بیشتر.
@@ -138,7 +141,7 @@ update msg model =
 
 ## View
 
-این تابع `view` از **توابع کمکی** برای سازماندهی بهتر کد استفاده می‌کند:
+تابع `view` از **توابع کمکی** برای سازماندهی بهتر کد استفاده می‌کند:
 
 ```elm
 view : Model -> Html Msg
@@ -193,7 +196,7 @@ viewValidation model =
 	به این برنامه در [ویرایشگر آنلاین][examples-form] نگاه کنید. سعی کنید ویژگی‌های زیر را به تابع کمکی `viewValidation` اضافه کنید:
 
 	- بررسی کنید که گذرواژه حداقل ۸ کاراکتر باشد.
-	- اطمینان یابید که گذرواژه شامل حروف کوچک، بزرگو کاراکترهای عددی باشد.
+	- اطمینان یابید که گذرواژه شامل حروف کوچک، بزرگ و کاراکترهای عددی باشد.
 
 	از توابع موجود در ماژول [`String`][string] برای این تمرین استفاده کنید!
 

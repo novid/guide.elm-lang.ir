@@ -2,15 +2,17 @@
 
 اغلب اوقات مفید است که اطلاعاتی را از اینترنت دریافت کنیم.
 
-برای نمونه، فرض کنید می‌خواهیم متن کامل کتاب _نظریه عمومی_ اثر والتر لیپمَن را بارگیری کنیم. این کتاب که در سال ۱۹۲۲ منتشر شده است، دیدگاه تاریخی درباره ظهور رسانه‌های جمعی و پیامدهای آن برای دموکراسی ارایه می‌دهد. در ادامه، بر روی شیوه استفاده از بسته [`elm/http`][elm-http] برای وارد کردن این کتاب به برنامه‌مان تمرکز خواهیم کرد!
+برای نمونه، فرض کنید می‌خواهیم متن کامل کتاب _نظریه عمومی_ اثر والتر لیپمَن را بارگیری کنیم. این کتاب که در سال ۱۹۲۲ منتشر شده است، دیدگاه تاریخی درباره ظهور رسانه‌های جمعی و پیامدهای آن برای دموکراسی را ارایه می‌دهد. در ادامه، بر روی شیوه استفاده از بسته [`elm/http`][elm-http] برای وارد کردن این کتاب به برنامه‌مان تمرکز خواهیم کرد!
 
 برای مرور این برنامه در ویرایشگر آنلاین، روی دکمه "ویرایش" کلیک کنید. احتمالا قبل از اینکه متن کامل کتاب نمایش داده شود، عبارت "Loading..." نمایش می‌یابد. **اکنون روی دکمه ویرایش کلیک کنید!**
 
 [ویرایش](https://elm-lang.org/examples/book){ .md-button .md-button--primary }
 
 ```elm linenums="1"
+module Main exposing (Model(..), Msg(..), init, main, subscriptions, update, view)
+
 import Browser
-import Html exposing (Html, text, pre)
+import Html exposing (Html, pre, text)
 import Http
 
 
@@ -19,12 +21,12 @@ import Http
 
 
 main =
-  Browser.element
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    , view = view
-    }
+    Browser.element
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
 
 
 
@@ -32,19 +34,19 @@ main =
 
 
 type Model
-  = Failure
-  | Loading
-  | Success String
+    = Failure
+    | Loading
+    | Success String
 
 
-init : () -> (Model, Cmd Msg)
+init : () -> ( Model, Cmd Msg )
 init _ =
-  ( Loading
-  , Http.get
-      { url = "https://elm-lang.org/assets/public-opinion.txt"
-      , expect = Http.expectString GotText
-      }
-  )
+    ( Loading
+    , Http.get
+        { url = "https://elm-lang.org/assets/public-opinion.txt"
+        , expect = Http.expectString GotText
+        }
+    )
 
 
 
@@ -52,19 +54,19 @@ init _ =
 
 
 type Msg
-  = GotText (Result Http.Error String)
+    = GotText (Result Http.Error String)
 
 
-update : Msg -> Model -> (Model, Cmd Msg)
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-  case msg of
-    GotText result ->
-      case result of
-        Ok fullText ->
-          (Success fullText, Cmd.none)
+    case msg of
+        GotText result ->
+            case result of
+                Ok fullText ->
+                    ( Success fullText, Cmd.none )
 
-        Err _ ->
-          (Failure, Cmd.none)
+                Err _ ->
+                    ( Failure, Cmd.none )
 
 
 
@@ -73,7 +75,7 @@ update msg model =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-  Sub.none
+    Sub.none
 
 
 
@@ -82,15 +84,15 @@ subscriptions model =
 
 view : Model -> Html Msg
 view model =
-  case model of
-    Failure ->
-      text "I was unable to load your book."
+    case model of
+        Failure ->
+            text "I was unable to load your book."
 
-    Loading ->
-      text "Loading..."
+        Loading ->
+            text "Loading..."
 
-    Success fullText ->
-      pre [] [ text fullText ]
+        Success fullText ->
+            pre [] [ text fullText ]
 ```
 
 برخی از قسمت‌های برنامه از نمونه‌های قبلی معماری Elm، باید برای شما آشنا باشد. هنوز یک `Model` از برنامه‌، یک تابع `update` برای بروزرسانی پیام‌ها و یک تابع `view` برای بروزرسانی صفحه نمایش داریم.
@@ -114,9 +116,9 @@ init _ =
 
 مثل همیشه، باید `Model` اولیه را تولید کنیم. همچنین اقدام به ایجاد یک **دستور**، از آنچه می‌خواهیم بلافاصله انجام شود، می‌کنیم. آن دستور در نهایت یک `Msg` تولید خواهد کرد که به تابع `update` داده می‌شود.
 
-وبسایت کتاب در حالت `Loading` شروع می‌شود و می‌خواهیم متن کامل کتاب را GET کنیم. هنگام انجام یک درخواست GET با [`Http.get`][http.get]، ما `url` داده‌ای که می‌خواهیم بارگیری شود همراه با نوع آن داده را مشخص و `expect` می‌کنیم. بنابراین، `url` به برخی داده‌ها در وبسایت Elm اشاره دارد و **انتظار** داریم که یک `String` بزرگ باشد که می‌توانیم روی صفحه نمایش دهیم.
+وبسایت کتاب در حالت `Loading` شروع می‌شود و می‌خواهیم متن کامل کتاب را GET کنیم. هنگام ایجاد درخواست GET با تابع [`Http.get`][http.get]، ما `url` داده‌ای که می‌خواهیم بارگیری شود همراه با نوع آن داده را مشخص و `expect` می‌کنیم. بنابراین، `url` به برخی داده‌ها در وبسایت Elm اشاره دارد و **انتظار** داریم که یک `String` بزرگ باشد که می‌توانیم روی صفحه نمایش دهیم.
 
-خط `Http.expectString GotText` کمی بیشتر از این می‌گوید که ما `expect` یک `String` داریم. همچنین می‌گوید در زمان دریافت پاسخ، باید به یک پیام `GotText` تبدیل شود:
+خط `Http.expectString GotText` نه تنها **انتظار** ما برای دریافت یک `String` را مشخص می‌کند، بلکه می‌گوید در زمان دریافت پاسخ، باید به یک پیام `GotText` تبدیل شود:
 
 ```elm
 type Msg
@@ -152,7 +154,7 @@ update msg model =
 
 با نگاهی به نشانه‌گذاری نوع داده، می‌بینیم که فقط یک مدل بروز شده را برنمی‌گردانیم. _همچنین_ یک **دستور** از آنچه می‌خواهیم Elm انجام دهد تولید می‌کنیم.
 
-به پیاده‌سازی که می‌پردازیم، به طور معمول، برای مرور پیام‌های مختلف از تکنیک تطبیق الگو استفاده می‌کنیم. وقتی یک پیام `GotText` دریافت می‌شود، `Result` یا نتیجه درخواست HTTP را بررسی و مدل را بسته به اینکه آیا موفقیت‌آمیز بوده یا خیر، بروزرسانی می‌کنیم. قسمت جدید، افزودن یک دستور به خروجی تابع `update` است.
+به طور معمول، برای مرور پیام‌های مختلف از تکنیک تطبیق الگو استفاده می‌کنیم. وقتی یک پیام `GotText` دریافت می‌شود، `Result` یا نتیجه درخواست HTTP را بررسی و مدل را بسته به اینکه آیا موفقیت‌آمیز بوده یا خیر، بروزرسانی می‌کنیم. قسمت جدید، افزودن یک دستور به خروجی تابع `update` است.
 
 در صورتی که متن کامل کتاب را با موفقیت دریافت کردیم، با فراخوانی دستور `Cmd.none` نشان می‌دهیم که کار دیگری برای انجام دادن وجود ندارد. متن کامل کتاب دریافت شده است!
 
@@ -162,15 +164,15 @@ update msg model =
 
 ## `subscription`
 
-مورد جدید دیگری که در این برنامه وجود دارد، تابع `subscription` است. این تابع به شما اجازه می‌دهد تا به `Model` نگاه کنید و تصمیم بگیرید آیا می‌خواهید به اطلاعات خاصی مشترک شوید یا خیر. در این برنامه، با استفاده از اشتراک `Sub.none` نشان می‌دهیم که نیازی به مشترک شدن در جایی نیست، اما به زودی یک نمونه از برنامه ساعت خواهیم دید که می‌خواهیم به زمان فعلی مشترک شویم!
+مورد جدید دیگری که در این برنامه وجود دارد، تابع `subscription` است. این تابع به شما اجازه می‌دهد تا به `Model` نگاه کنید و تصمیم بگیرید آیا می‌خواهید به اطلاعات خاصی مشترک شوید یا خیر. در این برنامه، با استفاده از اشتراک `Sub.none` نشان می‌دهیم که نیازی به مشترک شدن در جایی نیست، اما به زودی یک نمونه از برنامه ساعت خواهیم دید که می‌خواهیم به زمان فعلی سیستم مشترک شویم!
 
 ## خلاصه {#summary}
 
-در زمان ایجاد یک برنامه با `Browser.element`، یک سیستم به این شکل راه‌اندازی می‌شود:
+هنگام ایجاد یک برنامه با `Browser.element`، یک سیستم به این شکل راه‌اندازی می‌شود:
 
 ![Browser.element](../assets/diagrams/element.svg)
 
-در این حالت، توانایی صادر کردن **دستور** از توابع `init` و `update` را به دست می‌آوریم. این کار به ما اجازه می‌دهد تا هر زمان بخواهیم درخواست HTTP انجام دهیم. همچنین توانایی **مشترک شدن** به داده‌های جالب از سمت مرورگر وب را به دست می‌آوریم. (در ادامه یک نمونه از این حالت خواهیم دید!)
+در این حالت، توانایی صادر کردن **دستور** از توابع `init` و `update` را به دست می‌آوریم. این کار به ما اجازه می‌دهد تا هر زمان بخواهیم **دستور** HTTP صادر کنیم. همچنین توانایی **مشترک شدن** به داده‌های جالب از سمت مرورگر وب را به دست می‌آوریم. (در ادامه یک نمونه از این حالت خواهیم دید!)
 
 [elm-http]: https://package.elm-lang.org/packages/elm/http/latest
 [http.get]: https://package.elm-lang.org/packages/elm/http/latest/Http#get

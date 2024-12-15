@@ -2,6 +2,7 @@ site_name: راهنمای Elm
 site_url: https://guide.elm-lang.ir
 site_description: راهنمای رسمی زبان برنامه‌نویسی Elm
 site_author: Novid Emami
+copyright: CC BY-NC 4.0
 
 theme:
   name: material
@@ -20,11 +21,13 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: custom
       toggle:
         icon: material/brightness-7
 
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
       toggle:
         icon: material/brightness-4
   plugins:
@@ -34,12 +37,15 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github 
-      link: https://github.com/novid
+      link: https://github.com/novid/guide.elm-lang.ir
       name: novid on GitHub
 
     - icon: fontawesome/brands/linkedin 
       link: https://linkedin.com/in/novid
       name: novid on LinkedIn
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition

@@ -7,7 +7,7 @@
 [ویرایش](https://elm-lang.org/examples/text-fields){ .md-button .md-button--primary }
 
 ```elm linenums="1"
-module Main exposing (Model, Msg(..), init, main, update, view)
+module Main exposing (..)
 
 import Browser
 import Html exposing (Attribute, Html, div, input, text)

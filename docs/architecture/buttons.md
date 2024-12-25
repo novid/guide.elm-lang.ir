@@ -7,7 +7,7 @@
 [ویرایش](https://elm-lang.org/examples/buttons){ .md-button .md-button--primary }
 
 ```elm linenums="1"
-module Main exposing (Model, Msg(..), init, main, update, view)
+module Main exposing (..)
 
 import Browser
 import Html exposing (Html, button, div, text)
@@ -75,7 +75,7 @@ view model =
 
 ## Main
 
-مقدار `main` در Elm خاص است. این مقدار توصیف می‌کند که چه چیزی روی صفحه نمایش داده شود. در این مورد، قرار است برنامه را با مقدار `init` راه‌اندازی کنیم، تابع `view` همه چیز را روی صفحه نمایش می‌دهد و ورودی کاربر به تابع `update` منتقل می‌شود. این فرآیند را به عنوان توصیف سطح بالا از برنامه در نظر بگیرید.
+مقدار `main` در Elm مقداری ویژه است. این مقدار توصیف می‌کند که چه چیزی روی صفحه نمایش داده شود. در این مورد، قرار است برنامه را با مقدار `init` راه‌اندازی کنیم، تابع `view` همه چیز را روی صفحه نمایش می‌دهد و ورودی کاربر به تابع `update` منتقل می‌شود. این فرآیند را به عنوان توصیف سطح بالا از برنامه در نظر بگیرید.
 
 ## Model
 

@@ -17,7 +17,7 @@
 در اینجا یک برنامه کوچک وجود دارد که به شما اجازه می‌دهد یک عدد را افزایش و کاهش دهید:
 
 ```elm linenums="1"
-module Main exposing (Msg(..), main, update, view)
+module Main exposing (..)
 
 import Browser
 import Html exposing (Html, button, div, text)
@@ -48,6 +48,7 @@ view model =
         , div [] [ text (String.fromInt model) ]
         , button [ onClick Increment ] [ text "+" ]
         ]
+
 ```
 
 این کد در ابتدا ممکن است ناآشنا به نظر برسد، بنابراین به زودی به چگونگی کار این برنامه خواهیم پرداخت!

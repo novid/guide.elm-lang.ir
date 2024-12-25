@@ -62,7 +62,7 @@ customElements.define('intl-date',
 این کار را قبل از راه‌اندازی کد Elm انجام دهید تا بتوانید کدی مانند این را در Elm بنویسید:
 
 ```elm linenums="1"
-module Main exposing (viewDate)
+module Main exposing (..)
 
 import Html exposing (Html, node)
 import Html.Attributes exposing (attribute)

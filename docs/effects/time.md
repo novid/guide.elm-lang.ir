@@ -9,7 +9,7 @@
 [ویرایش](https://elm-lang.org/examples/time){ .md-button .md-button--primary }
 
 ```elm linenums="1"
-module Main exposing (Model, Msg(..), init, main, subscriptions, update, view)
+module Main exposing (..)
 
 import Browser
 import Html exposing (..)

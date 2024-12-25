@@ -7,7 +7,7 @@
 [ویرایش](https://elm-lang.org/examples/forms){ .md-button .md-button--primary }
 
 ```elm linenums="1"
-module Main exposing (Model, Msg(..), init, main, update, view, viewInput, viewValidation)
+module Main exposing (..)
 
 import Browser
 import Html exposing (..)
@@ -134,10 +134,7 @@ update msg model =
       { model | passwordAgain = password }
 ```
 
-هر مورد از شیوه بروزرسانی رکورد استفاده می‌کند تا اطمینان حاصل کند که فیلد مناسب تغییر می‌کند. این کار، مشابه برنامه قبلی است، به جز اینکه موارد بیشتری دارد.
-
-اما در تابع `view` جزییات بیشتری را باید نمایش دهیم.
-
+هر مورد از شیوه بروزرسانی رکورد استفاده می‌کند تا اطمینان حاصل کند که فیلد مناسب تغییر می‌کند. این کار، مشابه برنامه قبلی است، به جز اینکه موارد بیشتری دارد. در تابع `view` جزییات بیشتری را باید نمایش دهیم.
 
 ## View
 
@@ -166,7 +163,7 @@ viewInput t p v toMsg =
   input [ type_ t, placeholder p, value v, onInput toMsg ] []
 ```
 
-به این معنی است که نوشتن `viewInput "text" "Name" "Bill" Name` در Elm به یک مقدار HTML مانند `<input type="text" placeholder="Name" value="Bill">` هنگام نمایش در صفحه تبدیل می‌شود.
+به این معنی است که نوشتن `viewInput "text" "Name" "Bill"` در Elm به یک مقدار HTML مانند `<input type="text" placeholder="Name" value="Bill">` هنگام نمایش در صفحه تبدیل می‌شود.
 
 ورودی چهارم یک فراخوانی به تابع `viewValidation` است:
 

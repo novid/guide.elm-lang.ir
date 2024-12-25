@@ -1,13 +1,13 @@
 # JSON
 
-در بخش قبل، برنامه‌ای دیدیم که از HTTP برای دریافت محتوای یک کتاب استفاده می‌کرد. این عالی است، اما تعداد زیادی از سرورها، داده را در یک فرمت خاص به نام JSON یا JavaScript Object Notation برمی‌گردانند.
+در بخش قبل، برنامه‌ای دیدیم که از HTTP برای دریافت محتوای یک کتاب استفاده می‌کرد. این عالی است، اما تعداد زیادی از سرورها، داده را در یک فرمت خاص به نام `JSON` یا `JavaScript Object Notation` برمی‌گردانند.
 
 برنامه بعدی نشان می‌دهد که چگونه می‌توانیم داده JSON را دریافت کنیم و به ما اجازه می‌دهد که با فشردن یک دکمه، نقل قول‌های تصادفی مجموعه‌ای از کتاب‌ها را نمایش دهیم. روی دکمه "ویرایش" کلیک و کمی در برنامه جستجو کنید. شاید برخی از این کتاب‌ها را خوانده باشید! **اکنون روی دکمه ویرایش کلیک کنید!**
 
 [ویرایش](https://elm-lang.org/examples/quotes){ .md-button .md-button--primary }
 
 ```elm linenums="1"
-module Main exposing (Model(..), Msg(..), Quote, getRandomQuote, init, main, quoteDecoder, subscriptions, update, view, viewQuote)
+module Main exposing (..)
 
 import Browser
 import Html exposing (..)
@@ -149,7 +149,7 @@ quoteDecoder =
 - تابع `update` پیام `GotQuote` را برای هر بار که یک نقل قول جدید در دسترس است، مدیریت می‌کند. هر چه در آنجا اتفاق بیفتد، هیچ دستور اضافی نداریم. همچنین پیام `MorePlease` را زمانی که کسی دکمه را فشار می‌دهد، مدیریت می‌کند و دستوری برای دریافت نقل قول‌های تصادفی بیشتر صادر می‌کند.
 - تابع `view` به شما نقل قول‌ها را نشان می‌دهد!
 
-تفاوت اصلی در تعریف تابع `getRandomQuote` است. به جای استفاده از `Http.expectString` به `Http.expectJson` تغییر کرده‌ایم. این چه معنایی دارد؟
+تفاوت اصلی در تعریف تابع `getRandomQuote` است. به جای `Http.expectString` از `Http.expectJson` استفاده شده است. این چه معنایی دارد؟
 
 ## JSON {#javascript-object-notation}
 

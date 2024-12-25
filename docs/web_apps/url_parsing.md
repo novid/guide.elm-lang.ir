@@ -30,7 +30,7 @@
 در این مورد، صفحات موضوع، پست‌های وبلاگ، اطلاعات کاربری و راهی برای جستجوی نظرات کاربران داریم. از ماژول [`Url.Parser`][url.parser] برای نوشتن یک تحلیل‌گر URL استفاده می‌کنیم:
 
 ```elm linenums="1"
-module Main exposing (Route(..), routeParser)
+module Main exposing (..)
 
 import Url.Parser exposing ((</>), Parser, int, map, oneOf, s, string)
 
@@ -85,7 +85,7 @@ routeParser =
 در این مورد، صفحات پست‌های وبلاگ فردی و یک نمای کلی از وبلاگ با یک پارامتر جستجوی اختیاری داریم. از ماژول [`Url.Parser.Query`][url.parser.query] برای نوشتن یک تحلیل‌گر URL استفاده می‌کنیم:
 
 ```elm linenums="1"
-module Main exposing (Route(..), routeParser)
+module Main exposing (..)
 
 import Url.Parser exposing ((</>), (<?>), Parser, int, map, oneOf, s, string)
 import Url.Parser.Query as Query
@@ -133,7 +133,7 @@ routeParser =
 در این مورد، می‌توانیم از تابع [`fragment`][fragment] در ماژول `Url.Parser` برای مدیریت این نشانی‌ها استفاده کنیم:
 
 ```elm linenums="1"
-module Main exposing (Docs, docsParser)
+module Main exposing (..)
 
 
 type alias Docs =

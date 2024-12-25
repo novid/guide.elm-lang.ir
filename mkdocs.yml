@@ -18,6 +18,7 @@ theme:
     - navigation.footer
     - navigation.section
     - navigation.expand
+    - navigation.indexes
     - search.share
     - content.code.copy
   palette:
@@ -66,52 +67,52 @@ markdown_extensions:
       permalink_title: Permalink
 
 nav:
-  - Introduction: index.md
-  - Core Language: core_language.md
-  - The Elm Architecture:
+  - مقدمه: index.md
+  - مفاهیم پایه: core_language.md
+  - معماری Elm:
     - architecture/index.md
     - architecture/buttons.md
     - architecture/text_fields.md
     - architecture/forms.md
-  - Types:
+  - نوع داده:
     - types/index.md
     - types/reading_types.md
     - types/type_aliases.md
     - types/custom_types.md
     - types/pattern_matching.md
-  - Error Handling:
+  - مدیریت خطا:
     - error_handling/index.md
     - error_handling/maybe.md
     - error_handling/result.md
-  - Commands & Subscriptions:
+  - دستور و اشتراک:
     - effects/index.md
     - effects/http.md
     - effects/json.md
     - effects/random.md
     - effects/time.md
-  - Installation:
+  - نصب:
     - install/index.md
     - install/editor.md
     - install/elm.md
-  - JavaScript Interop:
+  - تعامل با جاوااسکریپت:
     - interop/index.md
     - interop/flags.md
     - interop/ports.md
     - interop/custom_elements.md
     - interop/limits.md
-  - Web Apps:
+  - وب اپلیکیشن:
     - web_apps/index.md
     - web_apps/navigation.md
     - web_apps/url_parsing.md
     - web_apps/modules.md
     - web_apps/structure.md
-  - Optimization:
+  - بهینه‌سازی:
     - optimization/index.md
     - optimization/lazy.md
     - optimization/keyed.md
     - optimization/asset_size.md
-  - Next Steps: next_steps.md
-  - Appendix:
+  - مراحل بعدی: next_steps.md
+  - ضمیمه:
     - appendix/types_as_sets.md
     - appendix/types_as_bits.md
     - appendix/function_types.md

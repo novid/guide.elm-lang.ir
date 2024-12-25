@@ -4,7 +4,7 @@
 
 برنامه بعدی نشان می‌دهد که چگونه می‌توانیم داده JSON را دریافت کنیم و به ما اجازه می‌دهد که با فشردن یک دکمه، نقل قول‌های تصادفی مجموعه‌ای از کتاب‌ها را نمایش دهیم. روی دکمه "ویرایش" کلیک و کمی در برنامه جستجو کنید. شاید برخی از این کتاب‌ها را خوانده باشید! **اکنون روی دکمه ویرایش کلیک کنید!**
 
-[ویرایش](https://elm-lang.org/examples/quotes){ .md-button .md-button--primary }
+[ویرایش](https://elm-lang.org/examples/quotes){ .md-button .md-button--primary .external }
 
 ```elm linenums="1"
 module Main exposing (..)
@@ -153,7 +153,7 @@ quoteDecoder =
 
 ## JSON {#javascript-object-notation}
 
-زمانی که از [`/api/random-quotes`][api-quotes] برای یک نقل قول تصادفی درخواست می‌کنید، سرور یک رشته JSON مانند این تولید می‌کند:
+زمانی که از [`/api/random-quotes`][api-quotes]{: .external } برای یک نقل قول تصادفی درخواست می‌کنید، سرور یک رشته JSON مانند این تولید می‌کند:
 
 ```json
 {
@@ -195,7 +195,7 @@ quoteDecoder =
 
 ## بلوک‌های سازنده {#building-blocks}
 
-بسته [`elm/json`][elm-json] ماژول [`Json.Decode`][json.decode] را در اختیار ما می‌گذارد. این ماژول پر از دیکودِرهای کوچک است که می‌توانیم آن‌ها را به هم متصل کنیم. بنابراین، برای دریافت `"age"` از `{ "name": "Tom", "age": 42 }` دیکودِر زیر را ایجاد می‌کنیم:
+بسته [`elm/json`][elm-json]{: .external } ماژول [`Json.Decode`][json.decode]{: .external } را در اختیار ما می‌گذارد. این ماژول پر از دیکودِرهای کوچک است که می‌توانیم آن‌ها را به هم متصل کنیم. بنابراین، برای دریافت `"age"` از `{ "name": "Tom", "age": 42 }` دیکودِر زیر را ایجاد می‌کنیم:
 
 ```elm
 import Json.Decode exposing (Decoder, field, int)
@@ -208,7 +208,7 @@ ageDecoder =
  -- field : String -> Decoder a -> Decoder a
 ```
 
-تابع [`field`][json.decode.field] دو آرگومان می‌گیرد:
+تابع [`field`][json.decode.field]{: .external } دو آرگومان می‌گیرد:
 
 ۱. `String` &mdash; نام یک فیلد. یک شی با فیلد `"age"` را درخواست می‌کنیم.
 ۲. `Decoder a` &mdash; یک دیکودِر برای مرحله بعدی. اگر فیلد `"age"` وجود داشته باشد، این دیکودِر را روی مقدار آن امتحان خواهیم کرد.
@@ -231,7 +231,7 @@ nameDecoder =
 
 ## ترکیب دیکودِرها {#combining-decoders}
 
-اگر بخواهیم دو فیلد را دیکود کنیم چطور؟ دیکودِرها را با استفاده از تابع [`map2`][json.decode.map2] به هم متصل می‌کنیم:
+اگر بخواهیم دو فیلد را دیکود کنیم چطور؟ دیکودِرها را با استفاده از تابع [`map2`][json.decode.map2]{: .external } به هم متصل می‌کنیم:
 
 ```elm
 map2 : (a -> b -> value) -> Decoder a -> Decoder b -> Decoder value
@@ -314,14 +314,14 @@ personDecoder =
 
 در ماژول `Json.Decode` تعدادی تابع مهم وجود دارد که در اینجا به آن‌ها نپرداختیم:
 
-- [`bool`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#bool) : `Decoder Bool`
-- [`list`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#list) : `Decoder a -> Decoder (List a)`
-- [`dict`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#dict) : `Decoder a -> Decoder (Dict String a)`
-- [`oneOf`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#oneOf) : `List (Decoder a) -> Decoder a`
+- [`bool`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#bool){: .external } : `Decoder Bool`
+- [`list`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#list){: .external } : `Decoder a -> Decoder (List a)`
+- [`dict`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#dict){: .external } : `Decoder a -> Decoder (Dict String a)`
+- [`oneOf`](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#oneOf){: .external } : `List (Decoder a) -> Decoder a`
 
 بنابراین، روش‌های مختلفی برای استخراج ساختار داده‌های متفاوت وجود دارد. تابع `oneOf` برای JSON با ساختار نامنظم بسیار مفید است. (برای نمونه، ممکن است گاهی یک `Int` دریافت کنید و گاهی یک `String` که شامل اعداد است. این واقعا آزاردهنده است!)
 
-توابع [`map2`][json.decode.map2] و [`map4`][json.decode.map4] را برای مدیریت اشیا با فیلدهای متعدد دیدیم. اما وقتی شروع به کار با اشیای بزرگ‌تر JSON می‌کنید، پیشنهاد می‌کنم نگاهی به بسته [`NoRedInk/elm-json-decode-pipeline`][json-decode-pipeline] بیندازید. این بسته، نوع داده پیچیده‌تری دارد، اما برخی توسعه‌دهندگان کار با آن را ترجیح می‌دهند.
+توابع [`map2`][json.decode.map2]{: .external } و [`map4`][json.decode.map4]{: .external } را برای مدیریت اشیا با فیلدهای متعدد دیدیم. اما وقتی شروع به کار با اشیای بزرگ‌تر JSON می‌کنید، پیشنهاد می‌کنم نگاهی به بسته [`NoRedInk/elm-json-decode-pipeline`][json-decode-pipeline]{: .external } بیندازید. این بسته، نوع داده پیچیده‌تری دارد، اما برخی توسعه‌دهندگان کار با آن را ترجیح می‌دهند.
 
 !!! example "نمونه واقعی"
 

@@ -50,6 +50,9 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/extra.js
+
 markdown_extensions:
   - admonition
   - attr_list

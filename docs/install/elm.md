@@ -2,9 +2,9 @@
 
 در این قسمت، فرآیند راه‌اندازی یک فایل اجرایی به نام `elm` را توضیح می‌دهیم. در ادامه، لینک‌های **نصب** این فایل قرار دارند:
 
-- **ویندوز** - [فایل باینری](https://github.com/elm/compiler/releases/download/0.19.1/installer-for-windows.exe)
-- **مک اواس** - [فایل باینری](https://github.com/elm/compiler/releases/download/0.19.1/installer-for-mac.pkg)
-- **لینوکس** - [راهنمای نصب](https://github.com/elm/compiler/blob/master/installers/linux/README.md)
+- **ویندوز** - [فایل باینری](https://github.com/elm/compiler/releases/download/0.19.1/installer-for-windows.exe){: .external }
+- **مک اواس** - [فایل باینری](https://github.com/elm/compiler/releases/download/0.19.1/installer-for-mac.pkg){: .external }
+- **لینوکس** - [راهنمای نصب](https://github.com/elm/compiler/blob/master/installers/linux/README.md){: .external }
 
 پس از اتمام نصب، ترمینال را در کامپیوتر خود باز کنید. ممکن است به نام `cmd.exe` یا `Command Prompt` در ویندوز شناخته شود.
 
@@ -31,10 +31,10 @@ elm init
 
 سعی کنید این دستور را اجرا کنید تا یک فایل `elm.json` و یک دایرکتوری `src/` ایجاد شود:
 
-- [`elm.json`][elm.json] پروژه شما را توصیف می‌کند.
+- [`elm.json`][elm.json]{: .external } پروژه شما را توصیف می‌کند.
 - `src/` شامل سورس کد پروژه است.
 
-حالا سعی کنید فایلی به نام `src/Main.elm` در ویرایشگر کد ایجاد و کد نمونه را از [برنامه دکمه‌ها][examples-buttons] کپی کنید.
+حالا سعی کنید فایلی به نام `src/Main.elm` در ویرایشگر کد ایجاد و کد نمونه را از [برنامه دکمه‌ها][examples-buttons]{: .external } کپی کنید.
 
 ## elm reactor
 
@@ -62,13 +62,13 @@ elm make src/Main.elm --optimize --output=elm.js
 
 این روش، متداول‌ترین شیوه برای کامپایل سورس کد Elm است. زمانی که مدیریت پروژه با `elm reactor` دشوار می‌شود، استفاده از این روش پیشنهاد می‌شود.
 
-این دستور، پیام‌های مشابهی را تولید می‌کند که در ویرایشگر آنلاین و `elm reactor` مشاهده کرده‌اید. سال‌ها کار در این زمینه انجام شده است، اما اگر پیام غیر مربوطی مشاهده کردید، لطفا آن را در صفحه [کاتالوگ پیام خطا][error-message-catalog] گزارش دهید. همیشه امکان بهبود وجود دارد!
+این دستور، پیام‌های مشابهی را تولید می‌کند که در ویرایشگر آنلاین و `elm reactor` مشاهده کرده‌اید. سال‌ها کار در این زمینه انجام شده است، اما اگر پیام غیر مربوطی مشاهده کردید، لطفا آن را در صفحه [کاتالوگ پیام خطا][error-message-catalog]{: .external } گزارش دهید. همیشه امکان بهبود وجود دارد!
 
 ## elm install
 
-بسته‌های Elm در وبسایت [`package.elm-lang.org`][elm-packages] قرار دارند.
+بسته‌های Elm در وبسایت [`package.elm-lang.org`][elm-packages]{: .external } قرار دارند.
 
-فرض کنید می‌خواهید برای انجام برخی درخواست‌های HTTP از بسته‌های [`elm/http`][elm-http] و [`elm/json`][elm-json] استفاده کنید. این بسته‌ها را می‌توانید با استفاده از دستورات زیر در پروژه خود نصب کنید:
+فرض کنید می‌خواهید برای انجام برخی درخواست‌های HTTP از بسته‌های [`elm/http`][elm-http]{: .external } و [`elm/json`][elm-json]{: .external } استفاده کنید. این بسته‌ها را می‌توانید با استفاده از دستورات زیر در پروژه خود نصب کنید:
 
 ```bash
 elm install elm/http

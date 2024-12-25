@@ -4,7 +4,7 @@
 
 در ادامه، کد برنامه قرار دارد. روی دکمه "ویرایش" کلیک تا در ویرایشگر آنلاین با آن کار کنید. سعی کنید متن یکی از دکمه‌ها را تغییر دهید. **اکنون روی دکمه ویرایش کلیک کنید!**
 
-[ویرایش](https://elm-lang.org/examples/buttons){ .md-button .md-button--primary }
+[ویرایش](https://elm-lang.org/examples/buttons){ .md-button .md-button--primary .external }
 
 ```elm linenums="1"
 module Main exposing (..)
@@ -167,4 +167,6 @@ Elm با رِندر کردن مقدار اولیه روی صفحه شروع می
 	۲. یک شاخه `Reset` در تابع `update` اضافه کنید.
 	۳. یک دکمه در تابع `view` اضافه کنید.
 
-	می‌توانید برنامه را در [ویرایشگر آنلاین](https://elm-lang.org/examples/buttons) امتحان کنید. اگر این کار خوب پیش رفت، سعی کنید یک دکمه دیگر برای افزایش به اندازه ۱۰ واحد اضافه کنید.
+	می‌توانید برنامه را در [ویرایشگر آنلاین][examples-buttons]{: .external } امتحان کنید. اگر این کار خوب پیش رفت، سعی کنید یک دکمه دیگر برای افزایش به اندازه ۱۰ واحد اضافه کنید.
+
+[examples-buttons]: https://elm-lang.org/examples/buttons

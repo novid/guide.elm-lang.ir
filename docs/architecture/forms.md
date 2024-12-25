@@ -4,7 +4,7 @@
 
 در ادامه، کد برنامه قرار دارد. روی دکمه "ویرایش" کلیک تا در ویرایشگر آنلاین با آن کار کنید. سعی کنید یک اشتباه تایپی وارد کنید تا برخی از پیام‌های خطا را ببینید. سعی کنید یک فیلد رکورد مانند `password` یا یک تابع مانند `placeholder` را به اشتباه بنویسید. **اکنون روی دکمه ویرایش کلیک کنید!**
 
-[ویرایش](https://elm-lang.org/examples/forms){ .md-button .md-button--primary }
+[ویرایش](https://elm-lang.org/examples/forms){ .md-button .md-button--primary .external }
 
 ```elm linenums="1"
 module Main exposing (..)
@@ -190,12 +190,12 @@ viewValidation model =
 
 !!! abstract "تمرین"
 
-	به این برنامه در [ویرایشگر آنلاین][examples-form] نگاه کنید. سعی کنید ویژگی‌های زیر را به تابع کمکی `viewValidation` اضافه کنید:
+	به این برنامه در [ویرایشگر آنلاین][examples-form]{: .external } نگاه کنید. سعی کنید ویژگی‌های زیر را به تابع کمکی `viewValidation` اضافه کنید:
 
 	- بررسی کنید که گذرواژه حداقل ۸ کاراکتر باشد.
 	- اطمینان یابید که گذرواژه شامل حروف کوچک، بزرگ و کاراکترهای عددی باشد.
 
-	از توابع موجود در ماژول [`String`][string] برای این تمرین استفاده کنید!
+	از توابع موجود در ماژول [`String`][string]{: .external } برای این تمرین استفاده کنید!
 
 [examples-form]: https://elm-lang.org/examples/forms
 [string]: https://package.elm-lang.org/packages/elm/core/latest/String

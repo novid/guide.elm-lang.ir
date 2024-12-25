@@ -4,7 +4,7 @@
 
 برای مشاهده این برنامه در ویرایشگر آنلاین، روی دکمه "ویرایش" کلیک کنید. سعی کنید نکته مربوط به کلمه کلیدی `type` را بررسی کنید. **اکنون روی دکمه ویرایش کلیک کنید!**
 
-[ویرایش](https://elm-lang.org/examples/text-fields){ .md-button .md-button--primary }
+[ویرایش](https://elm-lang.org/examples/text-fields){ .md-button .md-button--primary .external }
 
 ```elm linenums="1"
 module Main exposing (..)
@@ -144,6 +144,7 @@ update msg model =
 
 !!! abstract "تمرین"
 
-	برنامه را در [ویرایشگر آنلاین](https://elm-lang.org/examples/text-fields) باز کنید و طول `content` را در تابع `view` نمایش دهید. از تابع [`String.length`][string.length] استفاده کنید!
+	برنامه را در [ویرایشگر آنلاین][examples-textFields]{: .external } باز کنید و طول `content` را در تابع `view` نمایش دهید. از تابع [`String.length`][string.length]{: .external } استفاده کنید!
 
+[examples-textFields]: https://elm-lang.org/examples/text-fields
 [string.length]: https://package.elm-lang.org/packages/elm/core/latest/String#length

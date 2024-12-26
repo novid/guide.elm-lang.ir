@@ -111,5 +111,7 @@ type Profile
 
 	**نوع داده سفارشی مهم‌ترین ویژگی Elm است.** این مفهوم لایه‌های مختلفی دارد، به ویژه زمانی که به مدل‌سازی سناریوهای دقیق عادت کنید. سعی کردم برخی از این لایه‌ها را در بخش‌های [نوع داده به عنوان مجموعه](../appendix/types_as_sets.md) و [نوع داده به عنوان بیت](../appendix/types_as_bits.md) از فصل ضمیمه به اشتراک بگذارم. امیدوارم مفید واقع شود!
 
+*[ADT]: Algebraic Data Type
+
 [tagged-union]: https://en.wikipedia.org/wiki/Tagged_union
 [adt]: https://en.wikipedia.org/wiki/Algebraic_data_type

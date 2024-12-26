@@ -197,5 +197,8 @@ viewValidation model =
 
 	از توابع موجود در ماژول [`String`][string]{: .external } برای این تمرین استفاده کنید!
 
+*[HTML]: Hypertext Markup Language
+*[HTTP]: Hypertext Transfer Protocol
+
 [examples-form]: https://elm-lang.org/examples/forms
 [string]: https://package.elm-lang.org/packages/elm/core/latest/String

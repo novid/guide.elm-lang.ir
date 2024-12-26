@@ -166,6 +166,9 @@ Task.perform AdjustTimeZone Time.here
 	- با استفاده از ویژگی‌های [`style`][html.attributes]{: .external }، ساعت دیجیتال را زیباتر کنید.
 	- از بسته [`elm/svg`][elm-svg]{: .external } استفاده کنید تا یک ساعت آنالوگ با عقربه ثانیه شمار قرمز بسازید!
 
+*[HTTP]: Hypertext Transfer Protocol
+*[POSIX]: The Portable Operating System Interface
+
 [elm-time]: https://package.elm-lang.org/packages/elm/time/latest
 [tz]: https://en.wikipedia.org/wiki/Time_zone
 [dst]: https://en.wikipedia.org/wiki/Daylight_saving_time

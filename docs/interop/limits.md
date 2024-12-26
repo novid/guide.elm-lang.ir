@@ -36,6 +36,8 @@
 
 دوباره تکرار می‌کنم، این مسیر برای همه مناسب نیست! زبان‌های جایگزین زیادی وجود دارند که به جای آن یک FFI سنتی دارند و شما را تشویق می‌کنم که به آن زبان‌ها نگاه کنید اگر فکر می‌کنید آن مسیر ممکن است بهتر باشد. آیا اکوسیستم بسته‌ها به همان اندازه یکپارچه است؟ آیا بیشتر با خطای زمان اجرا مواجه می‌شوید؟ شاید، اما شاید انعطاف‌پذیری اضافی برای شما ارزشش را داشته باشد. بنابراین شما را تشویق می‌کنم که به [نمونه‌های تعامل با جاوااسکریپت][js-interop-examples]{: .external } نگاهی بیندازید تا ببینید آیا استفاده از پرچم، پورت و عنصر سفارشی می‌تواند همه نیازهای شما را پوشش دهد یا خیر. اگر در حال بررسی Elm برای استفاده تجاری هستید، این موضوع بسیار مهم است!
 
+*[FFI]: Foreign Function Interface
+
 [ffi]: https://en.wikipedia.org/wiki/Foreign_function_interface
 [js-interop-examples]: https://github.com/elm-community/js-integration-examples
 [stealing-credentials]: https://www.bleepingcomputer.com/news/security/compromised-javascript-package-caught-stealing-npm-credentials

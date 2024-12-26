@@ -222,7 +222,7 @@ app.ports.sendMessage.subscribe(function(message) {
 
 این کد جاوااسکریپت به تمام پیام‌های خروجی مشترک شده است. می‌توانید چندین تابع را مشترک کنید و توابع را با استفاده از تکنیک فراخوانی با ارجاع، لغو اشتراک کنید. بطور کلی توصیه می‌کنیم که عملکرد آن را استاتیک یا ایستا نگه دارید.
 
-همچنین توصیه می‌کنم به جای اینکه تعداد زیادی پورت ایجاد کنید، پیام‌های غنی‌تری ارسال کنید. شاید این به معنای داشتن یک نوع داده سفارشی در Elm باشد که همه چیزهایی را که ممکن است بخواهید به جاوااسکریپت بگویید، نمایندگی کند و سپس از ماژول [`Json.Encode`][json-encode]{: .external } برای ارسال آن به یک اشتراک جاوااسکریپت استفاده کنید. بسیاری از توسعه‌دهندگان متوجه می‌شوند که این کار منجر به عملکرد تمیزتری از [`SoC`][soc]{: .external } می‌شود. با استفاده از این تکنیک، Elm برخی از وضعیت‌ها را در اختیار دارد و جاوااسکریپت وضعیت‌های دیگر را.
+همچنین توصیه می‌کنم به جای اینکه تعداد زیادی پورت ایجاد کنید، پیام‌های غنی‌تری ارسال کنید. شاید این به معنای داشتن یک نوع داده سفارشی در Elm باشد که همه چیزهایی را که ممکن است بخواهید به جاوااسکریپت بگویید، نمایندگی کند و سپس از ماژول [`Json.Encode`][json-encode]{: .external } برای ارسال آن به یک اشتراک جاوااسکریپت استفاده کنید. بسیاری از توسعه‌دهندگان متوجه می‌شوند که این کار منجر به عملکرد تمیزتری از SoC می‌شود. با استفاده از این تکنیک، Elm برخی از وضعیت‌ها را در اختیار دارد و جاوااسکریپت وضعیت‌های دیگر را.
 
 ## پیام‌های ورودی (`Sub`) {#incoming-messages}
 
@@ -262,10 +262,12 @@ socket.addEventListener("message", function(event) {
 
 	امیدوارم این اطلاعات به شما کمک کند تا راهی برای گنجاندن Elm در پروژه خود پیدا کنید! این کار به اندازه انجام یک بازنویسی کامل در Elm جذاب نیست، اما تجربه نشان داده است که این استراتژی بسیار موثر است.
 
+*[HTML]: Hypertext Markup Language
+*[SoC]: Separation of Concerns
+
 [localstorage]: https://github.com/elm-community/js-integration-examples/tree/master/localStorage
 [websockets]: https://github.com/elm-community/js-integration-examples/tree/master/websockets
 [ellie]: https://ellie-app.com/8yYgw7y7sM2a1
 [ellie-localstorage]: https://ellie-app.com/8yYddD6HRYJa1
 [json.encode.value]: https://package.elm-lang.org/packages/elm/json/latest/Json-Encode#Value
 [json-encode]: https://package.elm-lang.org/packages/elm/json/latest/Json-Encode
-[soc]: https://en.wikipedia.org/wiki/Separation_of_concerns

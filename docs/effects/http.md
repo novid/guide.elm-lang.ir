@@ -172,6 +172,8 @@ update msg model =
 
 در این حالت، توانایی صادر کردن **دستور** از توابع `init` و `update` را به دست می‌آوریم. این کار به ما اجازه می‌دهد تا هر زمان بخواهیم **دستور** HTTP صادر کنیم. همچنین توانایی **مشترک شدن** به داده‌های جالب از سمت مرورگر وب را به دست می‌آوریم. (در ادامه یک نمونه از این حالت خواهیم دید!)
 
+*[HTTP]: Hypertext Transfer Protocol
+
 [elm-http]: https://package.elm-lang.org/packages/elm/http/latest
 [http.get]: https://package.elm-lang.org/packages/elm/http/latest/Http#get
 [http.error]: https://package.elm-lang.org/packages/elm/http/latest/Http#Error

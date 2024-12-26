@@ -236,6 +236,8 @@ False
 
 بروزرسانی فیلدهای رکورد به این شکل بسیار رایج است، بنابراین در بخش بعدی بیشتر با آن آشنا خواهیم شد!
 
+*[REPL]: read-eval-print loop
+
 [elm-repl]: https://elmprogramming.com/elm-repl.html
 [addition]: https://package.elm-lang.org/packages/elm/core/latest/Basics#+
 [division]: https://package.elm-lang.org/packages/elm/core/latest/Basics#/

@@ -215,6 +215,8 @@ update msg model =
 
 	به همین دلیل، یک خط در تعریف `Model` برای `Key` داریم. این یک هزینه نسبتا کم برای کمک به جلوگیری از یک دسته مشکلات بسیار ظریف است!
 
+*[HTML]: Hypertext Markup Language
+
 [elm-packages]: https://package.elm-lang.org
 [package-readme]: https://package.elm-lang.org/packages/elm/core/latest
 [package-docs]: https://package.elm-lang.org/packages/elm/core/latest/Maybe

@@ -93,6 +93,8 @@ elm install elm/json
 
 با اتمام فرآیند نصب `elm`، دسترسی از طریق ترمینال و تنظیم ویرایشگر کد، بیایید به یادگیری Elm ادامه دهیم!
 
+*[HTTP]: Hypertext Transfer Protocol
+
 [elm.json]: https://github.com/elm/compiler/blob/master/docs/elm.json/application.md
 [examples-buttons]: https://elm-lang.org/examples/buttons
 [localhost]: http://localhost:8000

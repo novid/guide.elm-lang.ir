@@ -65,5 +65,9 @@ elm make src/Main.elm --output=main.js
 
 	این یک فایل عادی HTML است، بنابراین می‌توانید هر چیزی که می‌خواهید در آن قرار دهید! بسیاری از توسعه‌دهندگان فایل‌های CSS و JS اضافی را در `<head>` قرار می‌دهند. بنابراین، اشکالی ندارد که CSS را به‌صورت دستی بنویسید یا به نوعی آن را تولید کنید. چیزی مانند `<link rel="stylesheet" href="whatever-you-want.css">` را در `<head>` قرار دهید و به آن دسترسی پیدا کنید. (گزینه‌های دیگری برای تعریف CSS  _درون_ Elm وجود دارد، اما خارج از بحث ماست!)
 
+*[API]: Application Programming Interface
+*[HTML]: Hypertext Markup Language
+*[CSS]: Cascading Style Sheets
+
 [js-interop-examples]: https://github.com/elm-community/js-integration-examples
 [discourse]: https://discourse.elm-lang.org

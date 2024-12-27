@@ -1,3 +1,9 @@
+---
+title: HTTP
+description: مروری بر مفهوم init، update و subscription
+icon: material/globe-model
+---
+
 # HTTP
 
 اغلب اوقات مفید است که اطلاعاتی را از اینترنت دریافت کنیم.

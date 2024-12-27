@@ -1,3 +1,9 @@
+---
+title: Html.Lazy
+description: مروری بر مفاهیم DOM، Virtual DOM، Render و Diff
+icon: material/sleep
+---
+
 # `Html.Lazy`
 
 بسته [`elm/html`][elm-html]{: .external } برای نمایش محتوا روی صفحه استفاده می‌شود. برای درک چگونگی بهینه‌سازی آن، ابتدا باید یاد بگیریم چگونه کار می‌کند!

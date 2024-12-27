@@ -1,3 +1,9 @@
+---
+title: نصب Elm
+description: مروری بر دستورات elm init، elm reactor، elm make و elm install
+icon: material/tree
+---
+
 # نصب Elm
 
 در این قسمت، فرآیند راه‌اندازی یک فایل اجرایی به نام `elm` را توضیح می‌دهیم. در ادامه، لینک‌های **نصب** این فایل قرار دارند:

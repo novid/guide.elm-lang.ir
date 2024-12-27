@@ -1,3 +1,9 @@
+---
+title: شمارنده
+description: مروری بر Model, View و Update در برنامه شمارنده
+icon: material/radiobox-marked
+---
+
 # دکمه
 
 اولین برنامه، یک شمارنده است که می‌تواند افزایش یا کاهش یابد.

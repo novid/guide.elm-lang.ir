@@ -1,7 +1,7 @@
 site_name: راهنمای Elm
-site_url: https://guide.elm-lang.ir
 site_description: راهنمای رسمی زبان برنامه‌نویسی Elm
 site_author: Novid Emami
+site_url: https://guide.elm-lang.ir
 copyright: CC BY-NC 4.0
 
 theme:
@@ -12,15 +12,15 @@ theme:
   logo: assets/logo.svg
   favicon: assets/favicon.ico
   features:
+    - content.code.copy
     - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.section
     - navigation.tracking
     - navigation.top
-    - navigation.footer
-    - navigation.section
-    - navigation.expand
-    - navigation.indexes
     - search.share
-    - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

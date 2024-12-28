@@ -164,8 +164,5 @@ init : (String, Int) -> ...
 
 توجه داشته باشید که وقتی یکی از تبدیل‌ها اشتباه می‌شود، **یک خطا در سمت جاوااسکریپت دریافت می‌کنید!** در اینجا، سیاست "Fail Fast" را اتخاذ کرده‌ایم. به محض بروز خطا، گزارش آن ارسال می‌شود، بجای اینکه خطا به تدریج در کد Elm پیشروی کند. این یکی دیگر از دلایلی است که توسعه‌دهندگان دوست دارند از `Json.Decode.Value` برای پرچم‌ها استفاده کنند. بجای اینکه در جاوااسکریپت خطا بگیرید، مقدار غیر منتظره از طریق یک دیکودِر عبور کرده و تضمین می‌کند که عملکردی جایگزین برای آن پیاده‌سازی شده باشد.
 
-*[HTML]: Hypertext Markup Language
-*[JSON]: JavaScript Object Notation
-
 [localstorage]: https://github.com/elm-community/js-integration-examples/tree/master/localStorage
 [json.decode.value]: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode#Value

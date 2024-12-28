@@ -107,9 +107,6 @@ Just 16 = 1 00010000
 
 	اگر فکر می‌کنید این موضوع جالب است، ممکن است یادگیری بیشتر درباره Garbage Collection سرگرم‌کننده باشد. [کتابچه Garbage Collection][gc-handbook]{: .external } منبعی عالی در این زمینه است!
 
-*[ASCII]: American Standard Code for Information Interchange
-*[UTF-8]: Unicode Transformation Format 8-bit
-
 [two's-complement]: https://en.wikipedia.org/wiki/Two%27s_complement
 [ascii]: https://en.wikipedia.org/wiki/ASCII
 [ascii-table]: https://ascii.cl

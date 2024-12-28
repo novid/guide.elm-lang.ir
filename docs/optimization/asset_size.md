@@ -80,8 +80,6 @@ Gzipped size:     9148 bytes
 
 	به صورت نظری، ممکن است بتوانید فایل‌های حتی کوچکتری با Elm به دست آورید. در حال حاضر این امکان وجود ندارد، اما اگر روی برنامه Elm با بیش از ۵۰ هزار خط کد کار می‌کنید، دوست داریم درباره وضعیت شما به عنوان بخشی از یک مطالعه کاربری، بیشتر بدانیم. جزییات بیشتر [در این نوشته][report]{: .external } موجود است!
 
-*[DOM]: Document Object Model
-
 [nodejs]: https://nodejs.org
 [elm-todomvc]: https://github.com/evancz/elm-todomvc
 [small-assets]: https://elm-lang.org/blog/small-assets-without-the-headache

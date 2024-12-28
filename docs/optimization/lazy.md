@@ -138,8 +138,6 @@ view model =
 
 در قسمت بعد، یک تکنیک برای استفاده بهتر از تابع `lazy` می‌آموزیم!
 
-*[DOM]: Document Object Model
-
 [elm-html]: https://package.elm-lang.org/packages/elm/html/latest
 [html.lazy]: https://package.elm-lang.org/packages/elm/html/latest/Html-Lazy
 [elm-todomvc]: https://github.com/evancz/elm-todomvc

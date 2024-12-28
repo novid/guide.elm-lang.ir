@@ -64,9 +64,6 @@ icon: material/satellite
 
 	در نمونه‌های آتی، بسته‌هایی را که استفاده می‌کنیم ذکر خواهم کرد. امیدوارم این توضیحات کمی درباره این فرآیند زمینه‌سازی کرده باشد!
 
-*[DOM]: Document Object Model
-*[HTTP]: Hypertext Transfer Protocol
-
 [browser.sandbox]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#sandbox
 [benchmark]: https://elm-lang.org/blog/blazing-fast-html-round-two
 [browser.element]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#element

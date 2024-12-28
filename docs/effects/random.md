@@ -174,8 +174,6 @@ spin =
 	- یک تاس دوم اضافه کنید و بگذارید هر دو به طور همزمان پرتاب شوند.
 	- بگذارید تاس‌ها به طور تصادفی بچرخند قبل از اینکه روی یک مقدار نهایی ثابت شوند.
 
-*[HTTP]: Hypertext Transfer Protocol
-
 [elm-random]: https://package.elm-lang.org/packages/elm/random/latest
 [random]: https://package.elm-lang.org/packages/elm/random/latest/Random
 [random.generate]: https://package.elm-lang.org/packages/elm/random/latest/Random#generate

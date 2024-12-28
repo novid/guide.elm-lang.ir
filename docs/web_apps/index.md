@@ -76,10 +76,6 @@ elm make src/Main.elm --output=main.js
 
 	لینک Digital Ocean موجود در این صفحه، یک پیوند ارجاعی است، بنابراین اگر از طریق آن ثبت نام و از خدماتش استفاده کنید، یک اعتبار ۲۵ دلاری برای هزینه‌های میزبانی وبسایت‌های `elm-lang.org` و `package.elm-lang.org` دریافت خواهیم کرد.
 
-*[DOM]: Document Object Model
-*[HTML]: Hypertext Markup Language
-*[CSS]: Cascading Style Sheets
-
 [elm-at-work]: https://elm-lang.org/blog/how-to-use-elm-at-work
 [Browser.document]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#document
 [document]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#Document

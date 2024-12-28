@@ -43,5 +43,3 @@ icon: material/office-building
 </video>
 
 اگر با چیزی گیج‌کننده مواجه شدید، حتما به این نکات دقت کنید!
-
-*[TEA]: The Elm Architecture

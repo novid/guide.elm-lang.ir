@@ -70,9 +70,6 @@ icon: material/office-building-cog
 
 	نکته این است که نوشتن یک تابع `viewSidebar` **به این معنی نیست** که نیاز به ایجاد فیلد در `Model` و شاخه در تابع `update` مربوطه دارید. در برابر این غریزه مقاومت کنید. **فقط توابع کمکی که نیاز دارید را بنویسید.**
 
-*[JSON]: JavaScript Object Notation
-*[MVC]: Model View Controller
-
 [gh-elm-packages]: https://github.com/elm/package.elm-lang.org
 [gh-elm-spa]: https://github.com/rtfeldman/elm-spa-example
 [the-life-of-file]: https://youtu.be/XpDsk374LDE

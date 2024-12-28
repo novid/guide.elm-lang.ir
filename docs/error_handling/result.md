@@ -68,6 +68,4 @@ type Error
 
 فصل بعدی نشان می‌دهد که چگونه درخواست HTTP انجام دهیم، بنابراین بزودی با نوع داده `Result` و `Error` روبرو خواهیم شد!
 
-*[HTTP]: Hypertext Transfer Protocol
-
 [result]: https://package.elm-lang.org/packages/elm-lang/core/latest/Result#Result

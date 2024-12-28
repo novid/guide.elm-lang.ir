@@ -268,9 +268,6 @@ socket.addEventListener("message", function(event) {
 
 	امیدوارم این اطلاعات به شما کمک کند تا راهی برای گنجاندن Elm در پروژه خود پیدا کنید! این کار به اندازه انجام یک بازنویسی کامل در Elm جذاب نیست، اما تجربه نشان داده است که این استراتژی بسیار موثر است.
 
-*[HTML]: Hypertext Markup Language
-*[SoC]: Separation of Concerns
-
 [localstorage]: https://github.com/elm-community/js-integration-examples/tree/master/localStorage
 [websockets]: https://github.com/elm-community/js-integration-examples/tree/master/websockets
 [ellie]: https://ellie-app.com/8yYgw7y7sM2a1

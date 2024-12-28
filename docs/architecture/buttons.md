@@ -175,6 +175,4 @@ Elm با رِندر کردن مقدار اولیه روی صفحه شروع می
 
 	می‌توانید برنامه را در [ویرایشگر آنلاین][examples-buttons]{: .external } امتحان کنید. اگر این کار خوب پیش رفت، سعی کنید یک دکمه دیگر برای افزایش به اندازه ۱۰ واحد اضافه کنید.
 
-*[HTML]: Hypertext Markup Language
-
 [examples-buttons]: https://elm-lang.org/examples/buttons

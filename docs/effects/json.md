@@ -333,9 +333,6 @@ personDecoder =
 
 	داستان‌های زیادی شنیده‌ام که هنگام تغییر از جاوااسکریپت به Elm، باگ‌هایی در کد سرور پیدا شده است. دیکودِرهایی که توسعه‌دهندگان می‌نویسند به عنوان یک مرحله اعتبارسنجی عمل کرده و موارد عجیب در مقادیر JSON را شناسایی می‌کنند. بنابراین، وقتی پروژه NoRedInk از React به Elm تغییر کرد، چند باگ در کد Ruby آن‌ها را آشکار ساخت!
 
-*[HTTP]: Hypertext Transfer Protocol
-*[JSON]: JavaScript Object Notation
-
 [api-quotes]: https://elm-lang.org/api/random-quotes
 [elm-json]: https://package.elm-lang.org/packages/elm/json/latest/
 [json.decode]: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode

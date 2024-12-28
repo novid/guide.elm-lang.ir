@@ -95,9 +95,5 @@ Luke Westby تجربه بیشتری در زمینه عنصر سفارشی دار
 مستندات مربوط به عنصر سفارشی ممکن است کمی گیج‌کننده باشد. اگر استفاده از آن انتخاب مناسبی برای پروژه شما است، امیدوارم این مقدمه برای شروع گنجاندن منطقی ساده برای ماژول `Intl` در مرورگر وب یا حتی ویجت‌های بزرگ React کافی باشد.
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/tyFe9Pw6TVE?si=S-N2nz-LEaRdEfM-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-*[l10n]: Localization
-*[i18n]: Internationalization
-*[DOM]: Document Object Model
-
 [custom-elements]: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 [i18n]: https://github.com/elm-community/js-integration-examples/tree/master/internationalization

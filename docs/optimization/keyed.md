@@ -59,8 +59,6 @@ viewPresident president =
 
 دستکاری DOM در مقایسه با انواع محاسباتی که در یک وب اپلیکیشن انجام می‌شود، بطور وحشتناکی کُند است. **همیشه، در ابتدای کار به توابع `Html.Lazy` و `Html.Keyed` مراجعه کنید.** توصیه می‌کنم این کار را با پروفایل‌گیری تا حد امکان تایید کنید. برخی از مرورگرها، [مانند کروم][chrome-performance]{: .external } نمای زمانی از برنامه ارایه می‌دهند. این ویژگی، یک نمای کلی از زمان صرف شده در بارگیری، اسکریپت‌نویسی، رِندر و ترسیم عناصر برنامه را فراهم می‌کند. اگر می‌ببینید که ۱۰٪ از زمان صرف اسکریپت‌نویسی می‌شود، می‌توانید کد Elm را دو برابر سریع‌تر کنید و هیچ تفاوت قابل توجهی ایجاد نکنید. در حالی که، استفاده از توابع lazy و keyed می‌تواند بخش بزرگی از آن ۹۰٪ دیگر را با دستکاری کمتر DOM کاهش دهد!
 
-*[DOM]: Document Object Model
-
 [html.keyed]: https://package.elm-lang.org/packages/elm/html/latest/Html-Keyed
 [by-education]: https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States_by_education
 [by-networth]: https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States_by_net_worth

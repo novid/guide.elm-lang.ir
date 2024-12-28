@@ -1,6 +1,6 @@
 ---
 title: مدیریت خطا
-description: مقدمه‌ای بر استراتژی و تکنیک مدیریت خطا در Elm
+description: مقدمه‌ای بر مدیریت خطا در Elm
 icon: material/head-cog
 ---
 

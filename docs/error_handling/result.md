@@ -1,6 +1,6 @@
 ---
 title: Result
-description: مروری بر مفهوم گزارش و بازیابی خطا
+description: مروری بر مفهوم گزارش خطا و بازیابی خطا
 icon: material/head-check
 ---
 

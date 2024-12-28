@@ -1,5 +1,5 @@
 ---
-title: شمارنده
+title: دکمه
 description: مروری بر Model, View و Update در برنامه شمارنده
 icon: material/radiobox-marked
 ---

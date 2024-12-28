@@ -1,5 +1,5 @@
 ---
-title: معکوس‌سازی متن
+title: فیلد متنی
 description: مروری بر Model, View و Update در برنامه معکوس‌سازی متن
 icon: material/form-textbox
 ---

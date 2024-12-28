@@ -1,6 +1,6 @@
 ---
 title: ماژول
-description: مروری بر تعریف، گسترش و کاربرد ماژول
+description: مروری بر مفهوم ماژول، تعریف، گسترش و کاربرد آن
 icon: material/package
 ---
 

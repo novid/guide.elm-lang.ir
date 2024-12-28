@@ -11,16 +11,17 @@ theme:
     text: Noto Sans Arabic
   logo: assets/logo.svg
   favicon: assets/favicon.ico
+
   features:
     - content.code.copy
     - header.autohide
-    # - navigation.expand
     - navigation.footer
     - navigation.indexes
     - navigation.section
     - navigation.tracking
     - navigation.top
     - search.share
+
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -33,6 +34,7 @@ theme:
       primary: custom
       toggle:
         icon: material/brightness-4
+
   plugins:
     - offline
     - search

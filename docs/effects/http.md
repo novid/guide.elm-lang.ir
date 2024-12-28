@@ -1,6 +1,6 @@
 ---
 title: HTTP
-description: مروری بر مفهوم init، update و subscription
+description: مروری بر مفهوم init، update و subscription در برنامه کتاب
 icon: material/globe-model
 ---
 

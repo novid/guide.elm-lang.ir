@@ -1,6 +1,6 @@
 ---
 title: پرچم
-description: مروری بر مفهوم پرچم و کاربرد آن در HTML و Elm
+description: مروری بر مفهوم پرچم و کاربرد آن در JavaScript و Elm
 icon: material/flag
 ---
 
@@ -10,7 +10,7 @@ icon: material/flag
 
 کاربرد رایج آن شامل ارسال کلید API، متغیر محیطی و داده کاربری است. اگر HTML را به صورت داینامیک یا پویا تولید می‌کنید، این ویژگی می‌تواند مفید واقع شود. همچنین، در بارگیری اطلاعات ذخیره یا کَش شده از [این نمونه `localStorage`][localstorage]{: .external } به ما کمک می‌کند.
 
-## پرچم در HTML {#flags-in-html}
+## پرچم در JavaScript {#flags-in-js}
 
 کد HTML مشابه قبل است و فقط یک آرگومان `flags` به تابع `()Elm.Main.init` اضافه می‌شود:
 

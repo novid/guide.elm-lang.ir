@@ -1,6 +1,6 @@
 ---
 title: دستور و اشتراک
-description: مقدمه‌ای بر مفهوم عوارض جانبی و کاربرد دستور و اشتراک در Elm
+description: مقدمه‌ای بر کاربرد دستور و اشتراک در Elm
 icon: material/satellite
 ---
 

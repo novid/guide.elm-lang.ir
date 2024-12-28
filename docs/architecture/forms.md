@@ -1,5 +1,5 @@
 ---
-title: فرم ساده
+title: فرم
 description: مروری بر Model, View و Update در برنامه فرم ساده
 icon: material/clipboard-text
 ---

@@ -1,6 +1,6 @@
 ---
 title: زمان
-description: مروری بر مفهوم زمان و مدیریت زمان و تایمر
+description: مروری بر مفهوم زمان، مدیریت زمان و تایمر
 icon: material/alarm
 ---
 

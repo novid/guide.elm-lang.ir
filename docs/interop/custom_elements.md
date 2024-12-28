@@ -1,6 +1,6 @@
 ---
 title: عنصر سفارشی
-description: مروری بر عنصر سفارشی و کاربرد آن در JavaScript و Elm
+description: مروری بر مفهوم عنصر سفارشی و کاربرد آن در JavaScript و Elm
 icon: material/hammer-wrench
 ---
 

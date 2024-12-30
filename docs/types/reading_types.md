@@ -184,6 +184,16 @@ checkPower powerLevel =
 
 تا اینجا، پوشش خوبی از نوع داده برای مقادیر و توابع داشته‌ایم، اما در صورت نیاز به ساختار داده‌های پیچیده‌تر، چه باید کرد؟
 
+***
+
+!!! abstract "یادداشت مترجم"
+
+	یکی از مهم‌ترین ابزارهای آموزشی و کاربردی این فصل، [Elm Search][elm-search]{: .external } نام دارد. با استفاده از این ابزار می‌توانید دو کار مهم را انجام دهید:
+
+	- **جستجو بر اساس نام تابع**: برای نمونه، کدام ماژول‌ از بسته‌های Elm، تابع ‍‍`map` را ارایه می‌دهد؟
+	- **جستجو بر اساس نشانه‌گذاری نوع داده**: برای نمونه، کدام تابع از بسته‌های Elm، ورودی رشته‌ای دریافت می‌کند و خروجی عددی می‌دهد؟ `String -> Int`
+
+[elm-search]: https://klaftertief.github.io/elm-search
 [list.length]: https://package.elm-lang.org/packages/elm/core/latest/List#length  
 [list.reverse]: https://package.elm-lang.org/packages/elm/core/latest/List#reverse
 [negate]: https://package.elm-lang.org/packages/elm/core/latest/Basics#negate

@@ -54,3 +54,15 @@ toName user =
 ```
 
 کاراکتر `_` وجود داده را تایید می‌کند، اما بطور صریح می‌گوید که هیچ‌کس از آن استفاده نمی‌کند.
+
+***
+
+!!! abstract "یادداشت مترجم"
+
+	با استفاده از نوع داده سفارشی و تطبیق الگو، می‌توانید پیچیده‌ترین حالت‌های ممکن در یک وبسایت یا وب اپلیکیشن را مدل‌سازی کنید. در دنیای برنامه‌نویسی تابعی، این الگو با نام **Making Impossible States Impossible** شناخته می‌شود. برای آشنایی بیشتر با این الگو، می‌توانید به منابع زیر مراجعه کنید:
+
+	- [مقاله در وبسایت Elm Patterns][elm-patterns]{: .external }
+	- [ارایه در کنفرانس Elm Conf][elm-conf]{: .external }
+
+[elm-patterns]: https://sporto.github.io/elm-patterns/basic/impossible-states.html
+[elm-conf]: https://www.youtube.com/watch?v=IcgmSRJHu_8

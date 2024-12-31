@@ -26,9 +26,19 @@ icon: material/text-box-edit
 
 پس از گذراندن این مراحل، باید بتوانید فایل‌های Elm را با Syntax Highlighting باز کنید. کلمات کلیدی مانند `import` و `type` باید رنگی باشند تا خواندن کد آسان‌تر شود.
 
+با اتمام فرآیند نصب `elm`، دسترسی از طریق ترمینال و تنظیم ویرایشگر کد، بیایید به یادگیری Elm ادامه دهیم!
+
 !!! note "یادداشت"
 
 	گزینه‌های دیگری هم وجود دارد! اعضای جامعه کاربری، افزونه‌های دیگری برای ویرایشگرهای Emacs، IntelliJ، Vim، VS Code و بسیاری دیگر ایجاد کرده‌اند. سعی می‌کنیم صفحه [افزونه‌های ویرایشگر][editor-plugins]{: .external } را با تمام گزینه‌های موجود، بروز نگه داریم!
 
+***
+
+!!! abstract "یادداشت مترجم"
+
+	ویرایشگرهای کد قابلیتی به نام **Language Server** دارند که برای هر زبان برنامه‌نویسی، پیاده‌سازی جداگانه‌‌ای دارد. در جامعه کاربری Elm، این ابزار با نام [`elm-language-server`][elm-language-server]{: .external } شناخته می‌شود که یکی دیگر از پروژه‌های `elm-tooling` به حساب می‌آید. [پلاگین موجود در ویرایشگر VSCode][elm-ls-vscode]{: .external } شامل این ابزار می‌شود، اما بقیه ویرایشگرها باید آن را به صورت جداگانه نصب و پیکربندی کنند.
+
 [editor-plugins]: https://github.com/elm/editor-plugins
 [sublime-text]: https://www.sublimetext.com
+[elm-language-server]: https://github.com/elm-tooling/elm-language-server
+[elm-ls-vscode]: https://marketplace.visualstudio.com/items?itemName=Elmtooling.elm-ls-vscode

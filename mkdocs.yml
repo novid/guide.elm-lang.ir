@@ -103,8 +103,8 @@ nav:
     - effects/time.md
   - نصب:
     - install/index.md
-    - install/editor.md
     - install/elm.md
+    - install/editor.md
   - تعامل با جاوااسکریپت:
     - interop/index.md
     - interop/flags.md

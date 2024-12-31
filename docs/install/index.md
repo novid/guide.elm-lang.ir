@@ -14,4 +14,19 @@ icon: material/download
 
 **رفع اشکال:** گاهی اوقات ممکن است در فرآیند نصب مشکلاتی پیش بیاید، بنابراین اگر با مشکلی مواجه شدید، لطفا از صفحه [جامعه کاربری][community]{: .external } درباره آن بپرسید! صحبت کردن درباره یک مشکل نصب معمولا می‌تواند زمان زیادی را برای شما صرفه‌جویی کند و مشارکت‌کنندگان خوشحال می‌شوند که به شما کمک کنند. لطفا از کمک گرفتن دریغ نکنید!
 
+***
+
+!!! abstract "یادداشت مترجم"
+
+	در نسخه اصلی راهنما، از فایل باینری **Elm** و ویرایشگر کد **Sublime Text** استفاده شده است که ترکیب این دو تا سال ۲۰۱۹ به نیازهای توسعه‌دهندگان پاسخ می‌داد. با توجه به پیشرفت فناوری‌های وب و بوجود آمدن ابزارهای کاربردی در جامعه کاربری، در این فصل به معرفی پروژه `elm-tooling` و ابزارهای موجود در آن می‌پردازیم. برای آشنایی بیشتر با این پروژه، به منابع زیر مراجعه کنید:
+
+	- [وبسایت رسمی پروژه][elm-tooling-cli]{: .external }
+	- [نصب و پیکربندی اولیه][elm-tooling-setup]{: .external }
+	- [پاسخ به پرسش‌های متداول][elm-tooling-faq]{: .external }
+	- [گیت‌هاب پروژه][elm-tooling-github]{: .external }
+
 [community]: https://elm-lang.org/community
+[elm-tooling-cli]: https://elm-tooling.github.io/elm-tooling-cli
+[elm-tooling-setup]: https://elm-tooling.github.io/elm-tooling-cli/getting-started
+[elm-tooling-faq]: https://elm-tooling.github.io/elm-tooling-cli/faq
+[elm-tooling-github]: https://github.com/elm-tooling

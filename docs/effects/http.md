@@ -178,6 +178,17 @@ update msg model =
 
 در این حالت، توانایی صادر کردن **دستور** از توابع `init` و `update` را به دست می‌آوریم. این کار به ما اجازه می‌دهد تا هر زمان بخواهیم **دستور** HTTP صادر کنیم. همچنین توانایی **مشترک شدن** به داده‌های جالب از سمت مرورگر وب را به دست می‌آوریم. (در ادامه یک نمونه از این حالت خواهیم دید!)
 
+***
+
+!!! abstract "یادداشت مترجم"
+
+	پیاده‌سازی بسته [`elm/http`][elm-http]{: .external } با استفاده از `XMLHttpRequest` انجام شده است که یک ویژگی پایدار و شناخته شده در `ECMAScript 5` یا `ES5` به حساب می‌آید. این استاندارد، از سال ۲۰۰۹ به بعد در تمام مرورگرهای وب بکار رفته است. برای آشنایی بیشتر با آن، به منابع زیر مراجعه کنید:
+
+	- [سورس کد بسته `elm http`][elm-http-source]{: .external }
+	- [مستندات رسمی MDN][xmlhttprequest]{: .external }
+
 [elm-http]: https://package.elm-lang.org/packages/elm/http/latest
 [http.get]: https://package.elm-lang.org/packages/elm/http/latest/Http#get
 [http.error]: https://package.elm-lang.org/packages/elm/http/latest/Http#Error
+[elm-http-source]: https://github.com/elm/http/tree/2.0.0
+[xmlhttprequest]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest

@@ -18,15 +18,11 @@ icon: material/download
 
 !!! abstract "یادداشت مترجم"
 
-	در نسخه اصلی راهنما، از فایل باینری **Elm** و ویرایشگر کد **Sublime Text** استفاده شده است که ترکیب این دو تا سال ۲۰۱۹ به نیازهای توسعه‌دهندگان پاسخ می‌داد. با توجه به پیشرفت فناوری‌های وب و بوجود آمدن ابزارهای کاربردی در جامعه کاربری، در این فصل به معرفی پروژه `elm-tooling` و ابزارهای موجود در آن می‌پردازیم. برای آشنایی بیشتر با این پروژه، به منابع زیر مراجعه کنید:
+	در نسخه اصلی راهنما، از فایل باینری **Elm** و ویرایشگر کد **Sublime Text** استفاده شده است که ترکیب این دو تا سال ۲۰۱۹ به نیازهای کاربران پاسخ می‌داد. با توجه به پیشرفت فناوری‌های وب و بوجود آمدن ابزارهای کاربردی، در این فصل به معرفی پروژه `elm-tooling` می‌پردازیم. برای آشنایی بیشتر با این پروژه، به منابع زیر مراجعه کنید:
 
-	- [وبسایت رسمی پروژه][elm-tooling-cli]{: .external }
-	- [نصب و پیکربندی اولیه][elm-tooling-setup]{: .external }
-	- [پاسخ به پرسش‌های متداول][elm-tooling-faq]{: .external }
+	- [وبسایت پروژه][elm-tooling-cli]{: .external }
 	- [گیت‌هاب پروژه][elm-tooling-github]{: .external }
 
 [community]: https://elm-lang.org/community
 [elm-tooling-cli]: https://elm-tooling.github.io/elm-tooling-cli
-[elm-tooling-setup]: https://elm-tooling.github.io/elm-tooling-cli/getting-started
-[elm-tooling-faq]: https://elm-tooling.github.io/elm-tooling-cli/faq
 [elm-tooling-github]: https://github.com/elm-tooling

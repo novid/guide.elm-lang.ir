@@ -36,7 +36,10 @@ icon: material/text-box-edit
 
 !!! abstract "یادداشت مترجم"
 
-	ویرایشگرهای کد قابلیتی به نام **Language Server** دارند که برای هر زبان برنامه‌نویسی، پیاده‌سازی جداگانه‌‌ای دارد. در جامعه کاربری Elm، این ابزار با نام [`elm-language-server`][elm-language-server]{: .external } شناخته می‌شود که یکی دیگر از پروژه‌های `elm-tooling` به حساب می‌آید. [پلاگین موجود در ویرایشگر VSCode][elm-ls-vscode]{: .external } شامل این ابزار می‌شود، اما بقیه ویرایشگرها باید آن را به صورت جداگانه نصب و پیکربندی کنند.
+	ویرایشگرهای کد قابلیتی به نام **Language Server** دارند که برای هر زبان برنامه‌نویسی، پیاده‌سازی جداگانه‌‌ای دارد. این ابزار در جامعه کاربری **Elm** با نام `elm-language-server` شناخته می‌شود که یکی دیگر از پروژه‌های `elm-tooling` به حساب می‌آید. پلاگین موجود در ویرایشگر کد **VSCode** شامل این ابزار می‌شود، اما بقیه ویرایشگرها باید آن را به صورت جداگانه نصب و پیکربندی کنند. برای آشنایی بیشتر در این زمینه، به منابع زیر مراجعه کنید:
+
+	- [Elm Language Server][elm-language-server]{: .external } 
+	- [VSCode Plugin][elm-ls-vscode]{: .external }
 
 [editor-plugins]: https://github.com/elm/editor-plugins
 [sublime-text]: https://www.sublimetext.com

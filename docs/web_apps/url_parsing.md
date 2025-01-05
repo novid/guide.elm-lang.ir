@@ -180,7 +180,16 @@ TODO
 
 اما چه اتفاقی می‌افتد وقتی که ۱۰، ۲۰ یا ۱۰۰ صفحه مختلف دارید؟ آیا همه آن‌ها در یک تابع `view` قرار می‌گیرند؟ همه این صفحه‌ها که نمی‌توانند در یک فایل قرار گیرند. چند فایل باید ایجاد شود؟ ساختار دایرکتوری باید چگونه باشد؟ این چیزی است که در ادامه بحث خواهیم کرد!
 
+***
+
+!!! abstract "یادداشت مترجم"
+
+	تنها بخش از راهنمای **Elm** که به صورت ناقص باقیمانده، همین صفحه است که در ترجمه‌های فرانسوی و ژاپنی آن نیز دست نخورده باقیمانده است. یکی از اعضای جامعه کاربری، در وبلاگ خود مقاله‌ای منتشر کرده است که تکمیل کننده این بخش به حساب می‌آید. برای مطالعه این مقاله، به وبلاگ زیر مراجعه کنید:
+
+	- [The missing part of the Elm guide][alex-korban]{: .external }
+
 [elm-url]: https://package.elm-lang.org/packages/elm/url/latest
 [url.parser]: https://package.elm-lang.org/packages/elm/url/latest
 [url.parser.query]: https://package.elm-lang.org/packages/elm/url/latest/Url-Parser-Query
 [fragment]: https://package.elm-lang.org/packages/elm/url/latest/Url-Parser#fragment
+[alex-korban]: https://korban.net/posts/elm/2018-10-12-elm-guide-missing-part-url-handling-browser.application

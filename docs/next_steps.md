@@ -25,6 +25,17 @@ icon: material/rocket
 
 در [سراسر جهان][meetup-elm]{: .external } گردهمایی‌های meetup برگزار می‌شود. ما از برگزارکنندگان دعوت می‌کنیم که [رویداد کدنویسی][noredink-meetup]{: .external } برگزار کنند که در آن افراد می‌توانند پروژه و رابطه بسازند. مزیت گردهمایی این است که می‌توانید در هر چیزی که روی آن کار می‌کنید کمک بگیرید، همچنین با همه کسانی که در منطقه شما از Elm استفاده می‌کنند آشنا می‌شوید. شاید کسی در حال کار بر روی چیزی جالب باشد که به شما الهام می‌بخشد. شاید تکنیکی را یاد بگیرید که نمی‌دانستید وجود دارد. شاید کسی یک موقعیت شغلی داشته باشد. شاید آشنایی با تعدادی از برنامه‌نویسان محلی Elm به شما در کارتان کمک کند. شاید فقط یک زمان سرگرم‌کننده برای شما باشد. برنامه‌نویسان معمولا ارزش این روابط شخصی را دست کم می‌گیرند، اما این یکی از مهم‌ترین بخش‌های جامعه کاربری سالم در زبان‌های برنامه‌نویسی است!
 
+***
+
+!!! abstract "یادداشت مترجم"
+
+	به منظور دسترسی راحت و متمرکز به منابع مطالعاتی، وبسایت [Elmcraft][elmcraft]{: .external } بوجود آمده است که طیف گسترده‌ای از این منابع را شامل می‌شود. مهمترین این منابع عبارتند از:
+
+	- [منابع آموزشی][elmcraft-learn]{: .external } مانند راهنما، دوره آنلاین، کتاب و تمرین
+	- خبرنامه [Elm Weekly][elm-weekly]{: .external }
+	- پادکست‌های [Elm Town][elm-town]{: .external } و [Elm Radio][elm-radio]{: .external }
+	- [بایگانی ویدیوهای][elm-videos]{: .external } جامعه کاربری
+
 [tea-tutorial]: https://github.com/evancz/elm-architecture-tutorial
 [elm-spa-example]: https://github.com/rtfeldman/elm-spa-example
 [elm-at-work]: https://elm-lang.org/blog/how-to-use-elm-at-work
@@ -40,3 +51,9 @@ icon: material/rocket
 [discourse]: https://discourse.elm-lang.org
 [meetup-elm]: https://www.meetup.com/topics/elm-programming/all
 [noredink-meetup]: https://blog.noredink.com/post/142283641812/designing-meetups-to-build-better-communities
+[elmcraft]: https://elmcraft.org
+[elmcraft-learn]: https://elmcraft.org/learn
+[elm-weekly]: https://www.elmweekly.nl
+[elm-town]: https://elm.town
+[elm-radio]: https://elm-radio.com
+[elm-videos]: https://elmcraft.org/media/videos

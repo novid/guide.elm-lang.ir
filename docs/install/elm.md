@@ -99,11 +99,16 @@ elm install elm/json
 
 !!! abstract "یادداشت مترجم"
 
-	استفاده از فایل باینری **Elm** که به صورت `global` در سیستم عامل نصب می‌شود، شاید گزینه مناسبی برای مدیریت پروژه نباشد. در این صورت، می‌توانید از پروژه `elm-tooling` برای دانلود و نصب کامپایلر همراه با سایر ابزارهای کاربردی استفاده کنید. این ابزارها عبارتند از:
+	استفاده از فایل باینری **Elm** که به صورت `global` در سیستم عامل نصب می‌شود، شاید گزینه مناسبی برای مدیریت پروژه نباشد. در این صورت، می‌توانید از پروژه `elm-tooling` برای دانلود و نصب کامپایلر همراه با سایر ابزارهای کاربردی استفاده کنید. یکی از مهم‌ترین قابلیت‌های این پروژه، در اختیار گذاشتن نسخه‌های مختلف از کامپایلر و ابزارهای کاربردی به صورت جداگانه برای هر پروژه **Elm** است که فرآیند مدیریت پروژه را آسان می‌کند. این ابزارها عبارتند از:
 
-	- [elm-format][elm-tooling-format]{: .external }: قالب‌بندی خودکار کد بدون تنظیمات اولیه همراه با استاندارد واحد
-	- [elm-json][elm-tooling-json]{: .external }: نصب، بروزرسانی و حذف وابستگی‌های نرم‌افزاری
-	- [elm-test-rs][elm-tooling-test]{: .external }: اجرای سریع آزمون کد
+	`elm-format`
+	: قالب‌بندی خودکار کد بدون تنظیمات اولیه همراه با استاندارد واحد
+
+	`elm-json`
+	: نصب، بروزرسانی و حذف وابستگی‌های نرم‌افزاری
+
+	`elm-test-rs`
+	: اجرای سریع آزمون کد
 
 [elm.json]: https://github.com/elm/compiler/blob/master/docs/elm.json/application.md
 [examples-buttons]: https://elm-lang.org/examples/buttons
@@ -112,6 +117,3 @@ elm install elm/json
 [elm-packages]: https://package.elm-lang.org
 [elm-http]: https://package.elm-lang.org/packages/elm/http/latest
 [elm-json]: https://package.elm-lang.org/packages/elm/json/latest
-[elm-tooling-format]: https://github.com/avh4/elm-format
-[elm-tooling-json]: https://github.com/zwilias/elm-json
-[elm-tooling-test]: https://github.com/mpizenberg/elm-test-rs

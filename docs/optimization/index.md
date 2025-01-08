@@ -18,10 +18,10 @@ icon: material/lightning-bolt
 
 !!! abstract "یادداشت مترجم"
 
-	به صورت پیشفرض، ابزارهای موجود در پلتفرم **Elm** برای بهینه‌سازی عملکرد و بهینه‌سازی فایل خروجی، نیاز اکثر پروژه‌های وب را بر طرف می‌کنند. اگر پروژه شما نیازمند بهینه‌سازی‌های بیشتری در این دو حوزه می‌باشد، پیشنهاد می‌کنم استفاده از ابزارهای دیگری مانند `elm-optimize-level-2` و `Parcel.js` را مد نظر قرار دهید. برای اطلاعات بیشتر در این زمینه، به منابع زیر مراجعه کنید:
+	به صورت پیشفرض، ابزارهای موجود در **Elm** برای بهینه‌سازی عملکرد و فایل خروجی، نیاز اکثر پروژه‌های وب را بر طرف می‌کنند. اگر پروژه شما نیازمند بهینه‌سازی‌های بیشتری است، پیشنهاد می‌کنم استفاده از ابزارهای `elm-optimize-level-2` و `Parcel.js` را مد نظر قرار دهید. برای کسب اطلاعات بیشتر، به منابع زیر مراجعه کنید:
 
-	- [elm-optimize-level-2][elm-optimize-level-2]{: .external }
-	- [Parcel.js][parceljs-elm]{: .external }
+	- [گیت‌هاب elm-optimize-level-2][elm-optimize-level-2]{: .external }
+	- [وبسایت Parcel.js][parceljs-elm]{: .external }
 
 [elm-optimize-level-2]: https://github.com/mdgriffith/elm-optimize-level-2
 [parceljs-elm]: https://parceljs.org/languages/elm

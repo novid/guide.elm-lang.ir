@@ -129,3 +129,6 @@ nav:
     - appendix/types_as_sets.md
     - appendix/types_as_bits.md
     - appendix/function_types.md
+  - درباره راهنما:
+    - about/usage.md
+    - about/donation.md

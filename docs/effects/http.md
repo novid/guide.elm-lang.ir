@@ -186,11 +186,9 @@ update msg model =
 
 	- [سورس کد بسته `elm/http`][elm-http-source]{: .external }
 	- [مستندات رسمی MDN][xmlhttprequest]{: .external }
-	- [مستندات رسمی ECMAScript][ecmascript]{: .external }
 
 [elm-http]: https://package.elm-lang.org/packages/elm/http/latest
 [http.get]: https://package.elm-lang.org/packages/elm/http/latest/Http#get
 [http.error]: https://package.elm-lang.org/packages/elm/http/latest/Http#Error
 [elm-http-source]: https://github.com/elm/http/tree/2.0.0
 [xmlhttprequest]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-[ecmascript]: https://262.ecma-international.org/5.1

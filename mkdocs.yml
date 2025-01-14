@@ -45,10 +45,6 @@ extra:
       link: https://github.com/novid/guide.elm-lang.ir
       name: novid on GitHub
 
-    - icon: fontawesome/brands/linkedin 
-      link: https://linkedin.com/in/novid
-      name: novid on LinkedIn
-
 extra_css:
   - stylesheets/extra.css
 

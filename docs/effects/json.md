@@ -30,9 +30,9 @@ import Json.Decode exposing (Decoder, field, int, map4, string)
 main =
     Browser.element
         { init = init
+        , view = view
         , update = update
         , subscriptions = subscriptions
-        , view = view
         }
 
 
@@ -41,15 +41,15 @@ main =
 
 
 type Model
-    = Failure
-    | Loading
+    = Loading
+    | Failure
     | Success Quote
 
 
 type alias Quote =
-    { quote : String
+    { author : String
+    , quote : String
     , source : String
-    , author : String
     , year : Int
     }
 
@@ -76,11 +76,11 @@ update msg model =
 
         GotQuote result ->
             case result of
-                Ok quote ->
-                    ( Success quote, Cmd.none )
-
                 Err _ ->
                     ( Failure, Cmd.none )
+
+                Ok quote ->
+                    ( Success quote, Cmd.none )
 
 
 
@@ -107,14 +107,14 @@ view model =
 viewQuote : Model -> Html Msg
 viewQuote model =
     case model of
+        Loading ->
+            text "Loading..."
+
         Failure ->
             div []
                 [ text "I could not load a random quote for some reason."
                 , button [ onClick MorePlease ] [ text "Try Again!" ]
                 ]
-
-        Loading ->
-            text "Loading..."
 
         Success quote ->
             div []
@@ -143,13 +143,13 @@ getRandomQuote =
 quoteDecoder : Decoder Quote
 quoteDecoder =
     map4 Quote
+        (field "author" string)
         (field "quote" string)
         (field "source" string)
-        (field "author" string)
         (field "year" int)
 ```
 
-این برنامه به طور کلی مشابه نمونه قبلی است:
+این برنامه بطور کلی مشابه نمونه قبلی است:
 
 - تابع `init` برنامه را در حالت `Loading`، با یک دستور برای دریافت یک نقل قول تصادفی، شروع می‌کند.
 - تابع `update` پیام `GotQuote` را برای هر بار که یک نقل قول جدید در دسترس است، مدیریت می‌کند. هر چه در آنجا اتفاق بیفتد، هیچ دستور اضافی نداریم. همچنین پیام `MorePlease` را زمانی که کسی دکمه را فشار می‌دهد، مدیریت می‌کند و دستوری برای دریافت نقل قول‌های تصادفی بیشتر صادر می‌کند.
@@ -159,13 +159,13 @@ quoteDecoder =
 
 ## JSON {#javascript-object-notation}
 
-زمانی که از [`/api/random-quotes`][api-quotes]{: .external } برای یک نقل قول تصادفی درخواست می‌کنید، سرور یک رشته JSON مانند این تولید می‌کند:
+زمانی که از نشانی [`/api/random-quotes`][api-quotes]{: .external } برای یک نقل قول تصادفی درخواست می‌کنید، سرور یک رشته JSON مانند این تولید می‌کند:
 
 ```json
 {
+  "author": "Seneca",
   "quote": "December used to be a month but it is now a year",
   "source": "Letters from a Stoic",
-  "author": "Seneca",
   "year": 54
 }
 ```
@@ -191,11 +191,11 @@ quoteDecoder =
 
 ![Integer Decoder](../assets/diagrams/int.svg)
 
-اگر همه چیز خوب پیش برود، یک `Int` در طرف دیگر خواهیم داشت! و اگر بخواهیم `"name"` را دریافت کنیم، باید JSON را از طریق یک `Decoder String` که دقیقا نحوه دسترسی به آن را توصیف می‌کند، اجرا کنیم:
+اگر همه چیز خوب پیش برود، یک مقدار `Int` در طرف دیگر خواهیم داشت! و اگر بخواهیم `"name"` را دریافت کنیم، باید JSON را از طریق یک `Decoder String` که دقیقا نحوه دسترسی به آن را توصیف می‌کند، اجرا کنیم:
 
 ![String Decoder](../assets/diagrams/string.svg)
 
-اگر همه چیز خوب پیش برود، یک `String` در طرف دیگر خواهیم داشت!
+اگر همه چیز خوب پیش برود، یک مقدار `String` در طرف دیگر خواهیم داشت!
 
 اما چگونه می‌توانیم دیکودِرهایی مانند این ایجاد کنیم؟
 
@@ -210,14 +210,14 @@ ageDecoder : Decoder Int
 ageDecoder =
   field "age" int
 
- -- int : Decoder Int
- -- field : String -> Decoder a -> Decoder a
+-- int : Decoder Int
+-- field : String -> Decoder a -> Decoder a
 ```
 
 تابع [`field`][json.decode.field]{: .external } دو آرگومان می‌گیرد:
 
-۱. `String` &mdash; نام یک فیلد. یک شی با فیلد `"age"` را درخواست می‌کنیم.
-۲. `Decoder a` &mdash; یک دیکودِر برای مرحله بعدی. اگر فیلد `"age"` وجود داشته باشد، این دیکودِر را روی مقدار آن امتحان خواهیم کرد.
+- `String` &mdash; نام یک فیلد. یک شی با فیلد `"age"` را درخواست می‌کنیم.
+- `Decoder a` &mdash; یک دیکودِر برای مرحله بعدی. اگر فیلد `"age"` وجود داشته باشد، این دیکودِر را روی مقدار آن امتحان خواهیم کرد.
 
 بنابراین، تابع `field "age" int` درخواست یک فیلد `"age"` را می‌کند و اگر وجود داشته باشد، دیکودِر `Int` را اجرا می‌کند تا سعی کند یک عدد صحیح استخراج کند.
 
@@ -231,6 +231,7 @@ nameDecoder =
   field "name" string
 
 -- string : Decoder String
+-- field : String -> Decoder a -> Decoder a
 ```
 
 در این مورد، یک شی با فیلد `"name"` را درخواست می‌کنیم و اگر وجود داشته باشد، می‌خواهیم مقدار آن یک `String` باشد.
@@ -260,24 +261,24 @@ personDecoder =
     (field "age" int)
 ```
 
-بنابراین، اگر از `personDecoder` روی `{ "name": "Tom", "age": 42 }` استفاده کنیم، یک مقدار Elm مانند `Person "Tom" 42` دریافت خواهیم کرد.
+بنابراین، اگر از `personDecoder` روی `{ "name": "Tom", "age": 42 }` استفاده کنیم، یک رکورد مانند `Person "Tom" 42` دریافت خواهیم کرد.
 
 اگر واقعا بخواهیم پیاده‌سازی کاملی داشته باشیم، باید `personDecoder` را به صورت `map2 Person nameDecoder ageDecoder` تعریف و از دیکودِرهای کوچک‌تر استفاده کنیم. پیشنهاد می‌کنم همیشه دیکودِرهای خود را از بلوک‌های سازنده کوچک‌تر بسازید!
 
 ## دیکودِرهای تو در تو {#nesting-decoders}
 
-بسیاری از داده‌های JSON ساده و صاف نیستند. تصور کنید که `/api/random-quotes/v2` با اطلاعات بیشتری درباره نویسندگان منتشر شده است:
+بسیاری از داده‌های JSON ساده و صاف نیستند. تصور کنید که نشانی `/api/random-quotes/v2` با اطلاعات بیشتری درباره نویسندگان بروزرسانی شده است:
 
 ```json
 {
-  "quote": "December used to be a month but it is now a year",
-  "source": "Letters from a Stoic",
   "author":
   {
     "name": "Seneca",
     "age": 68,
     "origin": "Cordoba"
   },
+  "quote": "December used to be a month but it is now a year",
+  "source": "Letters from a Stoic",
   "year": 54
 }
 ```
@@ -288,24 +289,24 @@ personDecoder =
 import Json.Decode exposing (Decoder, map2, map4, field, int, string)
 
 type alias Quote =
-  { quote : String
+  { author : Person
+  , quote : String
   , source : String
-  , author : Person
   , year : Int
   }
-
-quoteDecoder : Decoder Quote
-quoteDecoder =
-  map4 Quote
-    (field "quote" string)
-    (field "source" string)
-    (field "author" personDecoder)
-    (field "year" int)
 
 type alias Person =
   { name : String
   , age : Int
   }
+
+quoteDecoder : Decoder Quote
+quoteDecoder =
+  map4 Quote
+    (field "author" personDecoder)
+    (field "quote" string)
+    (field "source" string)
+    (field "year" int)
 
 personDecoder : Decoder Person
 personDecoder =

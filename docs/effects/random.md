@@ -28,9 +28,9 @@ import Random
 main =
     Browser.element
         { init = init
+        , view = view
         , update = update
         , subscriptions = subscriptions
-        , view = view
         }
 
 
@@ -141,21 +141,21 @@ generate : (a -> msg) -> Generator a -> Cmd msg
 ```elm
 import Random
 
-type Symbol = Cherry | Seven | Bar | Grapes
-
-symbol : Random.Generator Symbol
-symbol =
-  Random.uniform Cherry [ Seven, Bar, Grapes ]
-
 type alias Spin =
   { one : Symbol
   , two : Symbol
   , three : Symbol
   }
 
+type Symbol = Cherry | Seven | Bar | Grapes
+
 spin : Random.Generator Spin
 spin =
   Random.map3 Spin symbol symbol symbol
+
+symbol : Random.Generator Symbol
+symbol =
+  Random.uniform Cherry [ Seven, Bar, Grapes ]
 ```
 
 ابتدا `Symbol` را ایجاد می‌کنیم تا تصاویری که می‌توانند در دستگاه اسلات ظاهر شوند را توصیف کنیم. سپس یک تولیدکننده تصادفی ایجاد می‌کنیم که هر نماد را با احتمال برابر تولید می‌کند.
@@ -169,10 +169,10 @@ spin =
 	در ادامه، چند ایده برای جالب‌تر کردن برنامه قبل وجود دارد!
 
 	- بجای نمایش یک عدد، تصویر تاس را نشان دهید.
-	- بجای نمایش تصویر تاس، از بسته [`elm/svg`][elm-svg]{: .external } استفاده کنید تا خودتان آن را بکشید.
+	- بجای نمایش تصویر تاس، از بسته [`elm/svg`][elm-svg]{: .external } استفاده کنید و خودتان آن را رسم کنید.
 	- یک تاس وزن‌دار با استفاده از تابع [`Random.weighted`][random.weighted]{: .external } ایجاد کنید.
-	- یک تاس دوم اضافه کنید و بگذارید هر دو به طور همزمان پرتاب شوند.
-	- بگذارید تاس‌ها به طور تصادفی بچرخند قبل از اینکه روی یک مقدار نهایی ثابت شوند.
+	- یک تاس دوم اضافه کنید و بگذارید هر دو بطور همزمان پرتاب شوند.
+	- بگذارید تاس‌ها بطور تصادفی بچرخند قبل از اینکه روی یک مقدار نهایی ثابت شوند.
 
 [elm-random]: https://package.elm-lang.org/packages/elm/random/latest
 [random]: https://package.elm-lang.org/packages/elm/random/latest/Random

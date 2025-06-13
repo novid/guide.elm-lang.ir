@@ -24,7 +24,7 @@ document :
   -> Program flags model msg
 ```
 
-آرگومان‌ها، بجز تابع `view`، تقریبا مشابه `Browser.element` هستند. به جای بازگشت یک مقدار `Html`، یک [`Document`][document]{: .external } به این شکل باز می‌گردانید:
+آرگومان‌ها، بجز تابع `view`، تقریبا مشابه `Browser.element` هستند. بجای بازگشت یک مقدار `Html`، یک [`Document`][document]{: .external } به این شکل باز می‌گردانید:
 
 ```elm
 type alias Document msg =

@@ -33,9 +33,9 @@ uglifyjs elm.js --compress 'pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A
 
 !!! tip "نکته"
 
-	`uglifyjs` دو بار فراخوانی می‌شود. اول برای پرچم `compress--` و دوم برای پرچم `mangle--`. این کار ضروری است! در غیر این صورت، پرچم `pure_funcs` نادیده گرفته می‌شود.
+	`uglifyjs` دو بار فراخوانی می‌شود. اول با پرچم `compress--` و دوم با پرچم `mangle--`. این کار ضروری است! در غیر این صورت، پرچم `pure_funcs` نادیده گرفته می‌شود.
 
-	اگر دستور `uglifyjs` در دسترس نیست، می‌توانید آن را با دستور `npm install uglify-js --global` دانلود کنید. اگر دستور `npm` در دسترس نیست، می‌توانید آن را با [Node.js][nodejs]{: .external } دریافت کنید.
+	اگر `uglifyjs` در دسترس نیست، می‌توانید آن را با دستور `npm install uglify-js --global` دانلود کنید. اگر `npm` در دسترس نیست، می‌توانید آن را با [Node.js][nodejs]{: .external } دریافت کنید.
 
 ## اسکریپت {#script}
 

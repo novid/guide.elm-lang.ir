@@ -12,8 +12,8 @@ icon: material/head-check
 
 ```elm
 type Result error value
-  = Ok value
-  | Err error
+  = Err error
+  | Ok value
 ```
 
 هدف از این نوع داده، ارایه اطلاعات اضافی در زمان بروز خطا است. این حالت، برای گزارش خطا و بازیابی خطا بسیار مفید است!
@@ -49,15 +49,15 @@ isReasonableAge input =
 
 ## بازیابی خطا {#error-recovery}
 
-نوع داده `Result` همچنین می‌تواند در بازیابی از خطاها کمک کند. یکی از جاهایی که این را می‌بینید، هنگام انجام درخواست HTTP است. فرض کنید می‌خواهیم متن کامل کتاب _آنا کارِنینا_ اثر لئو تولستوی را نمایش دهیم. نتیجه درخواست HTTP یک `Result Error String` است تا این واقعیت را که درخواست ممکن است با متن کامل کتاب موفق شود یا به روش‌های مختلفی شکست بخورد، ثبت کند:
+نوع داده `Result` همچنین می‌تواند در بازیابی از خطا کمک کند. یکی از جاهایی که این را می‌بینید، هنگام انجام درخواست HTTP است. فرض کنید می‌خواهیم متن کامل کتاب _آنا کارِنینا_ اثر لئو تولستوی را نمایش دهیم. نتیجه درخواست HTTP یک `Result Error String` است تا این واقعیت را که درخواست ممکن است با متن کامل کتاب موفق شود یا به روش‌های مختلفی شکست بخورد، ثبت کند:
 
 ```elm
 type Error
-  = BadUrl String
-  | Timeout
-  | NetworkError
+  = BadBody String
   | BadStatus Int
-  | BadBody String
+  | BadUrl String
+  | NetworkError
+  | Timeout
 
 -- Ok "All happy ..." : Result Error String
 -- Err Timeout        : Result Error String

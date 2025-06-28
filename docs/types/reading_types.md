@@ -150,7 +150,7 @@ checkPower powerLevel =
 > List.reverse ["a", "b", "c"]
 ["c", "b", "a"] : List String
 
-> List.length [True, False]
+> List.reverse [True, False]
 [False, True] : List Bool
 ```
 

@@ -43,7 +43,7 @@ extra:
   social:
     - icon: fontawesome/brands/github 
       link: https://github.com/novid/guide.elm-lang.ir
-      name: novid on GitHub
+      name: GitHub Repository
 
 extra_css:
   - stylesheets/extra.css

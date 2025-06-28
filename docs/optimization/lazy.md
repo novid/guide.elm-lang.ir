@@ -1,6 +1,6 @@
 ---
 title: Html.Lazy
-description: مروری بر مفهوم DOM، Virtual DOM، Render و Diff
+description: مروری بر مفهوم DOM، Virtual DOM، Render, Diff و Lazy
 icon: material/sleep
 ---
 

@@ -8,7 +8,7 @@ theme:
   name: material
   language: fa
   font:
-    text: Noto Sans Arabic
+    text: Vazirmatn
   logo: assets/logo.svg
   favicon: assets/favicon.ico
 
